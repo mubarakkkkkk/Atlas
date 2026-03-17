@@ -9,7 +9,7 @@ const navItems = [
   { icon: "today", label: "Today", href: "/today" },
   { icon: "work", label: "Job Board", href: "/job-board" },
   { icon: "check_circle", label: "Completed Tasks", href: "/completed" },
-  { icon: "bar_chart", label: "Insights", href: "/analytics" },
+  { icon: "bar_chart", label: "Analytics", href: "/analytics" },
   { icon: "settings", label: "Settings", href: "/settings" },
 ];
 
