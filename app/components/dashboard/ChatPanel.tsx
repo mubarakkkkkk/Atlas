@@ -113,17 +113,17 @@ export function ChatPanel() {
       <div className="p-6 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-3xl mx-auto relative group">
           <div className="absolute -inset-1 bg-linear-to-r from-primary/50 to-primary/0 rounded-xl blur opacity-25 group-focus-within:opacity-50 transition duration-1000" />
-          <div className="relative bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-end p-2 pr-4">
-            <button className="p-2 text-slate-400 hover:text-primary transition-colors">
-              <MaterialIcon name="add_circle" />
+          <div className="relative bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-2 p-2 pr-3">
+            <button className="flex items-center justify-center w-9 h-9 text-slate-400 hover:text-primary transition-colors shrink-0">
+              <MaterialIcon name="add_circle" className="text-xl" />
             </button>
             <textarea
-              className="w-full bg-transparent border-none focus:ring-0 text-sm resize-none py-2 placeholder:text-slate-400 outline-none"
+              className="flex-1 bg-transparent border-none focus:ring-0 text-sm resize-none leading-9 placeholder:text-slate-400 outline-none min-h-[36px]"
               placeholder="Tell me about your day and I'll organize your work."
               rows={1}
             />
-            <button className="mb-1 p-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-              <MaterialIcon name="send" />
+            <button className="flex items-center justify-center w-9 h-9 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 shrink-0">
+              <MaterialIcon name="send" className="text-xl" />
             </button>
           </div>
         </div>

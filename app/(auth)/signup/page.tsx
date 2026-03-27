@@ -49,7 +49,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col lg:flex-row">
+    <div className="flex max-h-screen flex-col lg:flex-row">
       {/* Left Section: Branding & Illustration */}
       <SignupBranding />
 
