@@ -31,10 +31,10 @@ export default function SignUpPage() {
     // TODO: Implement actual registration
     console.log("Sign up attempt:", formData);
 
-    // Simulate API call
+    // Simulate API call - redirect to onboarding after signup
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/");
+      router.push("/onboarding");
     }, 1000);
   };
 
