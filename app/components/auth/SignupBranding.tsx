@@ -1,4 +1,3 @@
-import { AtlasLogo } from "./AtlasLogo";
 import { MaterialIcon } from "../ui/MaterialIcon";
 
 export function SignupBranding() {
@@ -10,8 +9,7 @@ export function SignupBranding() {
 
       {/* Logo */}
       <div className="relative z-10 flex items-center gap-3">
-        <div className="bg-primary p-2 rounded-lg">
-          <AtlasLogo className="size-6 text-white" />
+        <div className="bg-primary p-2 rounded-lg">          
         </div>
         <span className="text-2xl font-bold tracking-tight text-white">Atlas</span>
       </div>

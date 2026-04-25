@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AtlasLogo, SocialButtons, AuthBranding } from "../../components/auth";
+import { SocialButtons, AuthBranding } from "../../components/auth";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -56,8 +56,7 @@ export default function SignInPage() {
         <div className="w-full max-w-md space-y-8">
           {/* Mobile Logo */}
           <div className="flex lg:hidden items-center justify-center gap-3 mb-10">
-            <AtlasLogo className="size-8 text-primary" />
-            <h2 className="text-2xl font-bold dark:text-white">Atlas</h2>
+            
           </div>
 
           <div className="text-left">

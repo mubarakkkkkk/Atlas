@@ -1,5 +1,5 @@
-import { AtlasLogo } from "./AtlasLogo";
 import { MaterialIcon } from "../ui/MaterialIcon";
+import Image from "next/image";
 
 export function AuthBranding() {
   return (
@@ -11,8 +11,7 @@ export function AuthBranding() {
       {/* Logo */}
       <div className="relative z-10">
         <div className="flex items-center gap-3 text-white">
-          <AtlasLogo className="size-8 text-primary" />
-          <h2 className="text-2xl font-bold tracking-tight">Atlas</h2>
+         
         </div>
       </div>
 
