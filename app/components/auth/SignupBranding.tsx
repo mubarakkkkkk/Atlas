@@ -1,17 +1,21 @@
 import { MaterialIcon } from "../ui/MaterialIcon";
+import Image from "next/image";
 
 export function SignupBranding() {
   return (
-    <div className="relative hidden lg:flex lg:w-1/2 flex-col justify-between p-12 overflow-hidden bg-linear-to-br from-background-dark via-[#0a0f1a] to-primary/20">
+    <div className="relative hidden lg:flex lg:w-1/2 flex-col justify-between p-12 overflow-hidden bg-linear-to-br from-background-dark via-[#0a0f1a] to-primary/20 h-screen">
       {/* Decorative Gradient Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px]" />
 
       {/* Logo */}
-      <div className="relative z-10 flex items-center gap-3">
-        <div className="bg-primary p-2 rounded-lg">          
-        </div>
-        <span className="text-2xl font-bold tracking-tight text-white">Atlas</span>
+      <div className="relative z-10 flex items-center gap-3">        
+        <Image 
+                  src='/images/noBg.png'
+                  alt="Atlas Logo"
+                  width={200}
+                  height={80}
+                />
       </div>
 
       {/* Content Area */}

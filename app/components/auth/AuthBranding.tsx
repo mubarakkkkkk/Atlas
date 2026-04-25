@@ -11,7 +11,12 @@ export function AuthBranding() {
       {/* Logo */}
       <div className="relative z-10">
         <div className="flex items-center gap-3 text-white">
-         
+         <Image 
+          src='/images/noBg.png'
+          alt="Atlas Logo"
+          width={200}
+          height={80}
+        />
         </div>
       </div>
 

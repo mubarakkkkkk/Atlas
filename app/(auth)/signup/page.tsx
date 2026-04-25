@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AtlasLogo, SignupBranding } from "../../components/auth";
+import { SignupBranding } from "../../components/auth";
 import { MaterialIcon } from "../../components/ui/MaterialIcon";
+import Image from "next/image";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -60,7 +61,12 @@ export default function SignUpPage() {
           <div className="lg:hidden flex justify-center mb-8">
             <div className="flex items-center gap-2">
               <div className="bg-primary p-1.5 rounded-lg">
-                <AtlasLogo className="size-5 text-white" />
+                <Image 
+                          src='/images/noBg.png'
+                          alt="Atlas Logo"
+                          width={200}
+                          height={80}
+                        />
               </div>
               <span className="text-xl font-bold tracking-tight dark:text-white">Atlas</span>
             </div>
