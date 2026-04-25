@@ -19,15 +19,15 @@ export function Sidebar() {
 
   return (
     <aside className="w-64 flex flex-col border-r border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark/50 shrink-0">
-      <div className="p-6">
-        <div className="flex items-center gap-2 mb-8">         
-          <Image 
-          src='/images/wordmark.png'
-          alt='Atlas Logo'
-          width={70}
-          height={40}
+      <div className="p-2">         
+          <Image
+            src="/images/noBg.png"
+            alt="Atlas Logo"
+            width={150}
+            height={50}
           />
         </div>
+      <div className="p-6">        
 
         <nav className="space-y-1">
           {navItems.map((item) => {
