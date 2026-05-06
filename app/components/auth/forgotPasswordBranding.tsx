@@ -1,14 +1,11 @@
 import Image from "next/image";
-
-export function ForgotPasswordBranding () {
+export function ForgotPasswordBranding() {
   return (
-    <div className="relative hidden w-full lg:flex lg:w-1/2 flex-col justify-between p-12 overflow-hidden bg-background-dark">
-     
-      {/* Background Gradient Glow */}
-      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-primary/20 via-transparent to-purple-600/10 pointer-events-none" />
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/30 rounded-full blur-[120px] pointer-events-none" />
-
-      {/* Logo */}
+    <div className="hidden md:flex md:w-1/2 relative overflow-hidden items-center justify-center p-12 bg-[#0c0e16]">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-linear-to-tr from-[#11131c] via-transparent to-primary/20" />
+         {/* Logo */}
       <div className="relative z-10">
         <div className="flex items-center gap-3 text-white">
          <Image 
@@ -18,15 +15,17 @@ export function ForgotPasswordBranding () {
           height={80}
         />
         </div>
-        <div className="text-white p-4 justify-center items-center flex-col">
-          <h1 className="text-6xl font-bold">
-            Forgot your password? <br />
-            No problem.
-          </h1>
-          <h2 className="text-xl p-2 text-gray-400">
-            Your assistant is here to help you get back to work.
-          </h2>
-        </div>
+      </div>
+      </div>
+     
+      {/* Content */}
+      <div className="relative z-10 max-w-lg">       
+        <h1 className="text-5xl font-black leading-tight tracking-tight text-white mb-6">
+          Forgot your password? No problem.
+        </h1>
+        <p className="text-xl font-medium text-[#c3c5d8] mb-8">
+          Your assistant is here to help you get back to work.
+        </p>
       </div>
     </div>
   );
