@@ -1,7 +1,9 @@
 import React from "react";
 import { ForgotPasswordBranding } from "@/app/components/auth/forgotPasswordBranding";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight,Mail } from "lucide-react";
 import Link from "next/link";
+import Button from "@/app/components/layout/button";
+import Input from "@/app/components/layout/input";
 
 const ForgotPasswordPage = () => {
   return (
@@ -10,42 +12,74 @@ const ForgotPasswordPage = () => {
 
       {/* Right panel */}
       <div className="grow md:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-background">
+        <div className="w-full max-w-[448px] space-y-10">
 
-        {/* Card */}
-        <div className="w-full max-w-md border border-gray-600 rounded-xl shadow-sm p-8 flex flex-col gap-6">
-
-          {/* Header */}
-          <div className="flex flex-col gap-1">
-            <h1 className="text-2xl font-semibold text-gray-100">
-              Reset your password
-            </h1>
-            <p className="text-sm text-gray-500">
-              {"Enter your email address and we'll send you a code to reset your password."}
-            </p>
-          </div>
-
-          {/* Form */}
-          <div className="flex flex-col gap-4">
-            <input
-              type="email"
-              placeholder="name@company.com"
-              className="w-full border-none bg-gray-700 rounded-lg px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-            />
-
-            <button className="w-full bg-primary text-white py-2.5 px-6 rounded-lg flex items-center justify-center gap-2 text-sm font-medium hover:opacity-90 transition">
-              Send Reset Code
-              <ArrowRight size={16} />
-            </button>
-          </div>
-
-          {/* Back link */}
-          <Link
-            href="./login"
-            className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-800 transition w-fit"
+          {/* Card */}
+          <div
+            className="rounded-xl p-8 space-y-6"
+            style={{
+              background: "rgba(30, 41, 59, 0.35)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid #334155",
+            }}
           >
-            <ArrowLeft size={15} />
-            Back to Sign In
-          </Link>
+            {/* Header */}
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold text-on-surface">
+                Reset your password
+              </h2>
+              <p className="text-sm text-on-surface-variant">
+                {"Enter your email address and we'll send you a code to reset your password."}
+              </p>
+            </div>
+
+            {/* Form */}
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-semibold tracking-widest uppercase text-outline"
+                >
+                  Email Address
+                </label>
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg select-none">
+                    <Mail size={20} />
+                  </span>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    placeholder="name@company.com"
+                    className="pl-12 bg-surface-variant border-outline-variant text-on-surface rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container placeholder:text-outline/50"
+                  />
+                </div>
+              </div>
+
+              <Button
+                type="submit"
+                className="bg-primary-container text-on-primary-container hover:brightness-110 active:scale-[0.98]"
+                style={{ boxShadow: "0 0 20px rgba(13, 89, 242, 0.15)" }}
+              >
+                Send Reset Code
+                <ArrowRight size={16} />
+              </Button>
+            </div>
+
+            {/* Back link */}
+            <div className="pt-4 text-center">
+              <Link
+                href="./login"
+                className="text-on-surface-variant hover:text-primary transition-colors text-sm flex items-center justify-center gap-2"
+              >
+                <ArrowLeft size={16} />
+                Back to Sign In
+              </Link>
+            </div>
+          </div>  
+         
 
         </div>
       </div>

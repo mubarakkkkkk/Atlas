@@ -18,7 +18,7 @@ export function ForgotPasswordBranding () {
           height={80}
         />
         </div>
-        <div className="text-white p-4">
+        <div className="text-white p-4 justify-center items-center flex-col">
           <h1 className="text-6xl font-bold">
             Forgot your password? <br />
             No problem.
