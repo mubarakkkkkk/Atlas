@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Sidebar } from "../components/layout/Sidebar";
-import { Header } from "../components/layout/Header";
-import { MaterialIcon } from "../components/ui/MaterialIcon";
+import { Sidebar } from "../../components/layout/Sidebar";
+import { Header } from "../../components/layout/Header";
+import { MaterialIcon } from "../../components/ui/MaterialIcon";
 import {
   CompletedStats,
   TaskHistory,
@@ -12,7 +12,7 @@ import {
   CompletedTask,
   TimeBlock,
   CompletedStats as StatsType,
-} from "../components/completed";
+} from "../../components/completed";
 
 const SAMPLE_STATS: StatsType = {
   completedToday: 12,

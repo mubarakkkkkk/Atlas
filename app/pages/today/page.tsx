@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Sidebar } from "../components/layout/Sidebar";
-import { Header } from "../components/layout/Header";
+import { Sidebar } from "../../components/layout/Sidebar";
+import { Header } from "../../components/layout/Header";
 import {
   TodayStats,
   DailyTimeline,
@@ -15,7 +15,7 @@ import {
   TodayStats as StatsType,
   Insight,
   ContextInfo,
-} from "../components/today";
+} from "../../components/today";
 
 const SAMPLE_STATS: StatsType = {
   tasksCompleted: 12,

@@ -5,7 +5,7 @@ const ResetPasswordPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#11131c] text-[#e1e1ee]">
      
-      <main className="flex-grow flex flex-col md:flex-row">
+      <main className="grow flex flex-col md:flex-row">
         <NewPasswordBranding />
         <NewPasswordForm />
       </main>

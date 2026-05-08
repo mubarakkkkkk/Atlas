@@ -1,10 +1,10 @@
-import { Sidebar } from "../components/layout/Sidebar";
-import { Header } from "../components/layout/Header";
-import { StatCard } from "../components/insights/StatCard";
-import { WeeklyChart } from "../components/insights/WeeklyChart";
-import { TaskDistribution } from "../components/insights/TaskDistribution";
-import { RecentActivity } from "../components/insights/RecentActivity";
-import { AssistantSuggestions } from "../components/insights/AssistantSuggestions";
+import { Sidebar } from "../../components/layout/Sidebar";
+import { Header } from "../../components/layout/Header";
+import { StatCard } from "../../components/insights/StatCard";
+import { WeeklyChart } from "../../components/insights/WeeklyChart";
+import { TaskDistribution } from "../../components/insights/TaskDistribution";
+import { RecentActivity } from "../../components/insights/RecentActivity";
+import { AssistantSuggestions } from "../../components/insights/AssistantSuggestions";
 
 const statsData = [
   { label: "Tasks Completed Today", value: "12", trend: 15, trendDirection: "up" as const },

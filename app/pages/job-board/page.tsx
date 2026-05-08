@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Sidebar } from "../components/layout/Sidebar";
-import { Header } from "../components/layout/Header";
+import { Sidebar } from "../../components/layout/Sidebar";
+import { Header } from "../../components/layout/Header";
 import {
   KanbanColumn,
   BoardFilters,
@@ -12,7 +12,7 @@ import {
   TaskPriority,
   TaskLabel,
   COLUMNS,
-} from "../components/job-board";
+} from "../../components/job-board";
 
 const SAMPLE_TASKS: Task[] = [
   {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Sidebar } from "../components/layout/Sidebar";
-import { Header } from "../components/layout/Header";
+import { Sidebar } from "../../components/layout/Sidebar";
+import { Header } from "../../components/layout/Header";
 import {
   SettingsNav,
   ProfileSection,
@@ -15,7 +15,7 @@ import {
   WorkPreferencesData,
   Integration,
   AppearanceData,
-} from "../components/settings";
+} from "../../components/settings";
 
 const initialProfileData: ProfileData = {
   fullName: "Alex Rivera",
