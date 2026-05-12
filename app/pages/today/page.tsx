@@ -10,6 +10,8 @@ import {
   AtlasInsights,
   ActiveContext,
   ReminderToast,
+} from "../../components/today";
+import type {
   TodayTask,
   TimelineEvent,
   TodayStats as StatsType,
@@ -17,7 +19,7 @@ import {
   ContextInfo,
 } from "../../components/today";
 
-const SAMPLE_STATS: StatsType = {
+const SAMPLE_STATS = {
   tasksCompleted: 12,
   totalTasks: 17,
   tasksRemaining: 5,
@@ -99,13 +101,15 @@ const SAMPLE_INSIGHTS: Insight[] = [
   {
     id: "1",
     type: "suggestion",
-    message: "I noticed a 2-hour focus window available between 14:00 and 16:00. Would you like to schedule deep work for 'Auth Middleware'?",
+    message:
+      "I noticed a 2-hour focus window available between 14:00 and 16:00. Would you like to schedule deep work for 'Auth Middleware'?",
     highlight: "2-hour focus window",
   },
   {
     id: "2",
     type: "info",
-    message: "3 PRs in 'Core API' are pending your review. Estimated time: 45 minutes.",
+    message:
+      "3 PRs in 'Core API' are pending your review. Estimated time: 45 minutes.",
   },
 ];
 
@@ -127,8 +131,8 @@ export default function TodayPage() {
         tasks.map((task) =>
           task.elapsedTime !== undefined
             ? { ...task, elapsedTime: task.elapsedTime + 1 }
-            : task
-        )
+            : task,
+        ),
       );
     }, 1000);
 

@@ -1,80 +1,83 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BsStars } from "react-icons/bs";
+import { WiStars } from "react-icons/wi";
 import { ArrowRight, PlayIcon } from "lucide-react";
 
 const HomePage = () => {
   return (
-    <div className="m-6">
-      <div className="bg-background-dark h-screen w-screen">
-        <nav className="flex justify-between items-center ">
+    <div className="bg-[#0d0f1a] w-screen">
+      <section>
+        <nav className="flex justify-between items-center w-fill mr-12">
           <div>
-            <Image src="/images/noBg.png" alt="Logo" width={200} height={80} />
+            <Image src="/images/noBg.png" alt="icon" width={200} height={80} />
           </div>
-          <div className="flex justify-center items-center gap-8">
-            <ul className="flex gap-6">
+          <div>
+            <ul className="flex gap-4">
               <li>
-                <h1>
-                  <Link href="/">Features</Link>
-                </h1>
+                <Link href="#"> Features</Link>
               </li>
               <li>
-                <h1>
-                  <Link href="/">How It Works</Link>
-                </h1>
+                <Link href="#"> How it works</Link>
               </li>
               <li>
-                <h1>
-                  <Link href="/">Contact</Link>
-                </h1>
+                <Link href="#"> Contacts</Link>
               </li>
               <li>
-                <h1>
-                  <Link href="/">Support</Link>
-                </h1>
+                <Link href="#">Supports</Link>
               </li>
             </ul>
           </div>
-          <div className="flex gap-4 h-fit">
-            <button className="text-white ">Log In</button>
-            <button className="px-2 py-1 bg-primary text-white rounded-full">
-              Get Started
+          <div className="flex gap-4">
+            <button>Log in</button>
+            <button className="bg-primary text-white p-4 rounded-4xl">
+              Get started
             </button>
           </div>
         </nav>
-        <div className="flex items-center gap-2 border-[0.5px] border-white/10 w-fit rounded-xl p-2">
-          <span>
-            <BsStars className="text-primary" />
-          </span>
-          <span>
-            <p>Your Assistant. Your Productivity Engine.</p>
-          </span>
-        </div>
-        <div>
-          <h1 className="text-7xl font-black">
-            Plan.Focus. <br />
-            <span className="text-primary">
-              Get more done
-            </span>
-          </h1>
+      </section>
+      <section className="flex items-start gap-12 px-12 pt-8">
+        <div className="flex-1 pt-16">
+          <div className="flex border border-white/10 px-2 rounded-4xl h-fit w-fit">
+            <WiStars className="text-primary" size={30} />
+            <p>Your Ai Assistant. Your Productivity Engine</p>
+          </div>
           <div>
+            <h1 className="text-white text-7xl font-semibold">
+              Plan.Focus.
+              <br />
+              <span className="text-primary">Get Done More</span>
+            </h1>
             <p>
-              Atlas is a Ai powered and productivity hub that helps you plan your day, manage tasks, track progress, and find the right opportuninties. all in one place
+              Atlas is your Ai Powered Assistant and productivity hub that help
+              you plan your day, manage tasks, track progress, and find the
+              right oportunities. All in one
             </p>
+            <div className="flex gap-4">
+              <button className="flex gap-3 p-2 bg-primary text-white rounded-xl align-middle items-center">
+                Get Started For Free
+                <ArrowRight size={20} />
+              </button>
+              <button className="flex gap-3 p-2 border border-white/8 rounded-xl align-middle items-center">
+                See How It Works
+                <PlayIcon size={20} />
+              </button>
+            </div>
           </div>
         </div>
-        <div>
-          <button className="flex">
-            Get started for free 
-            <ArrowRight />
-          </button>
-          <button className="flex">
-            See hoe it works
-            <PlayIcon />
-          </button>
+        <div
+          className="rounded-2xl flex-1"
+          style={{ filter: "drop-shadow(0 0 40px rgba(37, 99, 235, 0.8))" }}
+        >
+          <Image
+            src="/images/overview.png"
+            alt="overview"
+            width={900}
+            height={600}
+            className="border border-white/10 rounded-2xl object-contain object-top"
+            style={{  width: "100%" }}
+          />
         </div>
-      </div>
+      </section>
     </div>
   );
 };

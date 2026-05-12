@@ -23,7 +23,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Filler
+  Filler,
 );
 
 const weeklyData = [
@@ -37,18 +37,23 @@ const weeklyData = [
 ];
 
 const completionRate = Math.round(
-  weeklyData.reduce((acc, d) => acc + d.completed, 0) / weeklyData.length
+  weeklyData.reduce((acc, d) => acc + d.completed, 0) / weeklyData.length,
 );
 
 const bestDay = weeklyData.reduce((best, current) =>
-  current.completed > best.completed ? current : best
+  current.completed > best.completed ? current : best,
 );
 
-const totalTasks = weeklyData.reduce((acc, d) => acc + Math.round(d.completed / 10), 0);
+const totalTasks = weeklyData.reduce(
+  (acc, d) => acc + Math.round(d.completed / 10),
+  0,
+);
 
 export function WeeklyChart() {
   const chartRef = useRef<ChartJS<"bar">>(null);
-  const [activeFilter, setActiveFilter] = useState<"week" | "month" | "year">("week");
+  const [activeFilter, setActiveFilter] = useState<"week" | "month" | "year">(
+    "week",
+  );
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -126,7 +131,15 @@ export function WeeklyChart() {
         callbacks: {
           title: (items) => {
             const dayIndex = items[0].dataIndex;
-            const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            const days = [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+            ];
             return days[dayIndex];
           },
           label: (context) => {
@@ -138,8 +151,8 @@ export function WeeklyChart() {
             return ` ${value}% target`;
           },
           afterBody: (items) => {
-            const completed = items[0].parsed.y;
-            const goal = items[1]?.parsed.y || 100;
+            const completed = items[0].parsed.y ?? 0;
+            const goal = items[1]?.parsed.y ?? 100;
             const diff = completed - goal;
             if (diff >= 0) {
               return [`\n ✓ Goal achieved!`];
@@ -158,7 +171,7 @@ export function WeeklyChart() {
           color: "#64748b",
           font: {
             size: 11,
-            weight: "medium",
+            weight: "normal",
           },
           padding: 8,
         },
@@ -239,7 +252,10 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                <MaterialIcon name="emoji_events" className="text-emerald-500 text-sm" />
+                <MaterialIcon
+                  name="emoji_events"
+                  className="text-emerald-500 text-sm"
+                />
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">
@@ -254,7 +270,10 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                <MaterialIcon name="task_alt" className="text-amber-500 text-sm" />
+                <MaterialIcon
+                  name="task_alt"
+                  className="text-amber-500 text-sm"
+                />
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">

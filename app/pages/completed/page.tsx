@@ -11,10 +11,9 @@ import {
   AssistantReflection,
   CompletedTask,
   TimeBlock,
-  CompletedStats as StatsType,
 } from "../../components/completed";
 
-const SAMPLE_STATS: StatsType = {
+const SAMPLE_STATS = {
   completedToday: 12,
   completedTodayChange: 20,
   completedThisWeek: 45,

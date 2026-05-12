@@ -1,5 +1,5 @@
-import { AtlasLogo } from "../auth/AtlasLogo";
 import { MaterialIcon } from "../ui/MaterialIcon";
+import Image from "next/image";
 
 interface OnboardingHeaderProps {
   onClose?: () => void;
@@ -11,9 +11,14 @@ export function OnboardingHeader({ onClose, showHelp }: OnboardingHeaderProps) {
     <header className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 py-4 md:px-10">
       <div className="flex items-center gap-3">
         <div className="text-primary">
-          <AtlasLogo className="size-8" />
-        </div>
-        <h2 className="text-xl font-bold tracking-tight">Atlas</h2>
+          {/* <AtlasLogo className="size-8" /> */}
+          <Image 
+          src="/images/noBg.png"
+          alt="logo"
+          width={200}
+          height={80}
+          />
+        </div>        
       </div>
       <button
         onClick={onClose}

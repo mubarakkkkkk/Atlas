@@ -6,12 +6,12 @@ import { MaterialIcon } from "../ui/MaterialIcon";
 import Image from "next/image";
 
 const navItems = [
-  { icon: "dashboard", label: "Dashboard", href: "/" },
-  { icon: "today", label: "Today", href: "/today" },
-  { icon: "work", label: "Job Board", href: "/job-board" },
-  { icon: "check_circle", label: "Completed Tasks", href: "/completed" },
-  { icon: "bar_chart", label: "Analytics", href: "/analytics" },
-  { icon: "settings", label: "Settings", href: "/settings" },
+  { icon: "dashboard", label: "Dashboard", href: "/pages/dashboard" },
+  { icon: "today", label: "Today", href: "/pages/today" },
+  { icon: "work", label: "Job Board", href: "/pages/job-board" },
+  { icon: "check_circle", label: "Completed Tasks", href: "/pages/completed" },
+  { icon: "bar_chart", label: "Analytics", href: "/pages/analytics" },
+  { icon: "settings", label: "Settings", href: "/pages/settings" },
 ];
 
 export function Sidebar() {

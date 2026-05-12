@@ -1,4 +1,6 @@
-export default function Loading(): JSX.Element {
+import type { ReactNode } from "react";
+
+export default function Loading(): ReactNode {
   return (
     <div className="flex h-screen animate-pulse">
       
