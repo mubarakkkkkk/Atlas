@@ -56,7 +56,7 @@ export default function SignUpPage() {
 
       {/* Right Section: Form */}
       <div className="flex-1 flex flex-col justify-center items-center px-6 py-12 lg:px-24 bg-background-light dark:bg-background-dark">
-        <div className="w-full max-w-[440px]">
+        <div className="w-full max-w-110">
           {/* Header Mobile Logo (Visible only on small screens) */}
           <div className="lg:hidden flex justify-center mb-8">
             <div className="flex items-center gap-2">

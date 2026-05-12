@@ -18,7 +18,8 @@ const SAMPLE_TASKS: Task[] = [
   {
     id: "1",
     title: "Fix authentication bug",
-    description: "Users are getting logged out unexpectedly after 30 minutes of inactivity.",
+    description:
+      "Users are getting logged out unexpectedly after 30 minutes of inactivity.",
     status: "in_progress",
     priority: "urgent",
     labels: ["bug"],
@@ -72,7 +73,8 @@ const SAMPLE_TASKS: Task[] = [
   {
     id: "5",
     title: "Refactor user service",
-    description: "Break down the monolithic user service into smaller microservices.",
+    description:
+      "Break down the monolithic user service into smaller microservices.",
     status: "backlog",
     priority: "low",
     labels: ["refactor", "improvement"],
@@ -82,7 +84,8 @@ const SAMPLE_TASKS: Task[] = [
   {
     id: "6",
     title: "Add dark mode toggle",
-    description: "Implement theme switching functionality in the settings page.",
+    description:
+      "Implement theme switching functionality in the settings page.",
     status: "review",
     priority: "medium",
     labels: ["feature"],
@@ -135,7 +138,9 @@ const SAMPLE_TASKS: Task[] = [
 export default function JobBoardPage() {
   const [tasks, setTasks] = useState<Task[]>(SAMPLE_TASKS);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedPriority, setSelectedPriority] = useState<TaskPriority | "all">("all");
+  const [selectedPriority, setSelectedPriority] = useState<
+    TaskPriority | "all"
+  >("all");
   const [selectedLabel, setSelectedLabel] = useState<TaskLabel | "all">("all");
   const [view, setView] = useState<"board" | "list">("board");
 
@@ -195,7 +200,9 @@ export default function JobBoardPage() {
           <div className="p-6 space-y-6">
             {/* Page Header */}
             <div>
-              <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Job Board</h1>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Job Board
+              </h1>
               <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                 Manage and track your tasks across different stages
               </p>

@@ -104,13 +104,15 @@ const SAMPLE_INSIGHTS = [
     id: "1",
     type: "trend" as const,
     title: "Peak Velocity",
-    description: "You finished tasks 15% faster than usual during the Morning block today.",
+    description:
+      "You finished tasks 15% faster than usual during the Morning block today.",
   },
   {
     id: "2",
     type: "insight" as const,
     title: "Insight",
-    description: 'Batching your "Refactor" tasks resulted in the highest efficiency gain this week.',
+    description:
+      'Batching your "Refactor" tasks resulted in the highest efficiency gain this week.',
   },
 ];
 
@@ -118,7 +120,7 @@ export default function CompletedTasksPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredTasks = SAMPLE_TASKS.filter((task) =>
-    task.title.toLowerCase().includes(searchQuery.toLowerCase())
+    task.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (
@@ -129,7 +131,9 @@ export default function CompletedTasksPage() {
         {/* Header */}
         <header className="h-16 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 bg-background-light dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
           <div className="flex items-center gap-4">
-            <h2 className="text-xl font-bold tracking-tight">Completed Tasks</h2>
+            <h2 className="text-xl font-bold tracking-tight">
+              Completed Tasks
+            </h2>
           </div>
           <div className="flex items-center gap-4">
             <div className="relative">

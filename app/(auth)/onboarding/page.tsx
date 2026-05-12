@@ -118,7 +118,7 @@ export default function OnboardingPage() {
   });
 
   const handleClose = () => {
-    router.push("/");
+    router.push("/pages/dashboard");
   };
 
   const handleContinue = () => {
@@ -134,7 +134,7 @@ export default function OnboardingPage() {
       assistantBehavior: assistantBehaviorData,
       planFirstDay: planFirstDayData,
     });
-    router.push("/");
+    router.push("pages//dashboard");
   };
 
   const handleEditPreferences = () => {
@@ -197,7 +197,7 @@ export default function OnboardingPage() {
         <OnboardingHeader onClose={handleClose} showHelp={currentStep === 3} />
 
         <main className="flex flex-1 justify-center py-12 px-4">
-          <div className="flex flex-col w-full max-w-[700px]">
+          <div className="flex flex-col w-full max-w-175">
             {/* Progress Section - Hide on complete step */}
             {currentStep < 4 && (
               <div className="mb-10">

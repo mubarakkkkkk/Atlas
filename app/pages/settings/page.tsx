@@ -54,7 +54,12 @@ const initialWorkPreferences: WorkPreferencesData = {
 const initialIntegrations: Integration[] = [
   { id: "github", name: "GitHub", connected: true, icon: "github" },
   { id: "slack", name: "Slack", connected: false, icon: "slack" },
-  { id: "google-calendar", name: "Google Calendar", connected: true, icon: "google" },
+  {
+    id: "google-calendar",
+    name: "Google Calendar",
+    connected: true,
+    icon: "google",
+  },
   { id: "gitlab", name: "GitLab", connected: false, icon: "gitlab" },
 ];
 
@@ -68,13 +73,15 @@ export default function SettingsPage() {
   const [hasChanges, setHasChanges] = useState(false);
 
   const [profile, setProfile] = useState<ProfileData>(initialProfileData);
-  const [assistantBehavior, setAssistantBehavior] = useState<AssistantBehaviorData>(
-    initialAssistantBehavior
+  const [assistantBehavior, setAssistantBehavior] =
+    useState<AssistantBehaviorData>(initialAssistantBehavior);
+  const [workPreferences, setWorkPreferences] = useState<WorkPreferencesData>(
+    initialWorkPreferences,
   );
-  const [workPreferences, setWorkPreferences] =
-    useState<WorkPreferencesData>(initialWorkPreferences);
-  const [integrations, setIntegrations] = useState<Integration[]>(initialIntegrations);
-  const [appearance, setAppearance] = useState<AppearanceData>(initialAppearance);
+  const [integrations, setIntegrations] =
+    useState<Integration[]>(initialIntegrations);
+  const [appearance, setAppearance] =
+    useState<AppearanceData>(initialAppearance);
 
   const handleProfileChange = (data: ProfileData) => {
     setProfile(data);
@@ -93,14 +100,14 @@ export default function SettingsPage() {
 
   const handleConnect = (id: string) => {
     setIntegrations((prev) =>
-      prev.map((i) => (i.id === id ? { ...i, connected: true } : i))
+      prev.map((i) => (i.id === id ? { ...i, connected: true } : i)),
     );
     setHasChanges(true);
   };
 
   const handleDisconnect = (id: string) => {
     setIntegrations((prev) =>
-      prev.map((i) => (i.id === id ? { ...i, connected: false } : i))
+      prev.map((i) => (i.id === id ? { ...i, connected: false } : i)),
     );
     setHasChanges(true);
   };
@@ -135,19 +142,42 @@ export default function SettingsPage() {
   const getSectionTitle = () => {
     switch (activeSection) {
       case "profile":
-        return { title: "Profile", description: "Manage your personal information and preferences." };
+        return {
+          title: "Profile",
+          description: "Manage your personal information and preferences.",
+        };
       case "assistant":
-        return { title: "Assistant Behavior", description: "Customize how your assistant plans tasks, sends reminders, and interacts with you." };
+        return {
+          title: "Assistant Behavior",
+          description:
+            "Customize how your assistant plans tasks, sends reminders, and interacts with you.",
+        };
       case "preferences":
-        return { title: "Work Preferences", description: "Set your working hours and productivity preferences." };
+        return {
+          title: "Work Preferences",
+          description: "Set your working hours and productivity preferences.",
+        };
       case "notifications":
-        return { title: "Notifications", description: "Control how and when you receive notifications." };
+        return {
+          title: "Notifications",
+          description: "Control how and when you receive notifications.",
+        };
       case "integrations":
-        return { title: "Integrations", description: "Connect your favorite tools and services." };
+        return {
+          title: "Integrations",
+          description: "Connect your favorite tools and services.",
+        };
       case "appearance":
-        return { title: "Appearance", description: "Customize the look and feel of your workspace." };
+        return {
+          title: "Appearance",
+          description: "Customize the look and feel of your workspace.",
+        };
       default:
-        return { title: "Settings", description: "Manage your assistant behavior and developer environment." };
+        return {
+          title: "Settings",
+          description:
+            "Manage your assistant behavior and developer environment.",
+        };
     }
   };
 
@@ -183,7 +213,10 @@ export default function SettingsPage() {
 
               <div className="md:col-span-3 space-y-8">
                 {activeSection === "profile" && (
-                  <ProfileSection data={profile} onChange={handleProfileChange} />
+                  <ProfileSection
+                    data={profile}
+                    onChange={handleProfileChange}
+                  />
                 )}
 
                 {activeSection === "assistant" && (
@@ -200,9 +233,7 @@ export default function SettingsPage() {
                   />
                 )}
 
-                {activeSection === "notifications" && (
-                  <NotificationsSection />
-                )}
+                {activeSection === "notifications" && <NotificationsSection />}
 
                 {activeSection === "integrations" && (
                   <IntegrationsSection
@@ -213,7 +244,10 @@ export default function SettingsPage() {
                 )}
 
                 {activeSection === "appearance" && (
-                  <AppearanceSection data={appearance} onChange={handleAppearanceChange} />
+                  <AppearanceSection
+                    data={appearance}
+                    onChange={handleAppearanceChange}
+                  />
                 )}
               </div>
             </div>
@@ -256,28 +290,54 @@ function NotificationsSection() {
   return (
     <section className="bg-white dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
       <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-        <h3 className="font-bold text-slate-900 dark:text-slate-100">Notification Preferences</h3>
+        <h3 className="font-bold text-slate-900 dark:text-slate-100">
+          Notification Preferences
+        </h3>
       </div>
       <div className="p-6 space-y-4">
         {[
-          { key: "emailNotifications" as const, title: "Email notifications", description: "Receive task updates and reminders via email." },
-          { key: "pushNotifications" as const, title: "Push notifications", description: "Get instant alerts on your device." },
-          { key: "taskReminders" as const, title: "Task reminders", description: "Remind me before task deadlines." },
-          { key: "weeklyDigest" as const, title: "Weekly digest", description: "Receive a summary of your week every Sunday." },
-          { key: "mentionAlerts" as const, title: "Mention alerts", description: "Notify me when someone mentions me." },
+          {
+            key: "emailNotifications" as const,
+            title: "Email notifications",
+            description: "Receive task updates and reminders via email.",
+          },
+          {
+            key: "pushNotifications" as const,
+            title: "Push notifications",
+            description: "Get instant alerts on your device.",
+          },
+          {
+            key: "taskReminders" as const,
+            title: "Task reminders",
+            description: "Remind me before task deadlines.",
+          },
+          {
+            key: "weeklyDigest" as const,
+            title: "Weekly digest",
+            description: "Receive a summary of your week every Sunday.",
+          },
+          {
+            key: "mentionAlerts" as const,
+            title: "Mention alerts",
+            description: "Notify me when someone mentions me.",
+          },
         ].map((item) => (
           <div
             key={item.key}
             className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
           >
             <div>
-              <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{item.title}</p>
+              <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                {item.title}
+              </p>
               <p className="text-xs text-slate-500">{item.description}</p>
             </div>
             <button
               onClick={() => toggleSetting(item.key)}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                settings[item.key] ? "bg-primary" : "bg-slate-200 dark:bg-slate-700"
+                settings[item.key]
+                  ? "bg-primary"
+                  : "bg-slate-200 dark:bg-slate-700"
               }`}
             >
               <span

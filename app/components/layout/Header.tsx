@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { MaterialIcon } from "../ui/MaterialIcon";
+import { User } from "lucide-react";
 
 interface HeaderProps {
   searchPlaceholder?: string;
@@ -37,15 +38,9 @@ export function Header({
           <MaterialIcon name="notifications" />
           <span className="absolute top-2 right-2.5 size-2 bg-red-500 border-2 border-white dark:border-background-dark rounded-full" />
         </button>
-        <div className="size-9 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden border border-slate-200 dark:border-primary/20">
-          <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiuOH5OSO-FRD2d_5WjgGI6UpRHZijmgLk6d6Df8iPfVL6nkyUQV1-3wz9AvIlVGE561WGr1DKq0Qn3n1w8fobk1kimJzdeP5ety9kq6bqRFWjMuFOxhxJ-K5Jx0J2VZHYFQxEHIAsyaWkbRwGrWGphFvjW10geoBKg5aFCq0OimCNQYOCmeryeix56I1QO6YorlzYYhfwqfrEf9TUldor9b-Trk6UaXXKszFj47TcxkumFNVWp6Jm71tq-4Vam_vlFMIQ0GUmmzMr"
-            alt="User profile avatar"
-            width={36}
-            height={36}
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <button className="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg relative">
+          <User />
+        </button>
       </div>
     </header>
   );

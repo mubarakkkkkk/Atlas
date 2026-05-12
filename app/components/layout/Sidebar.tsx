@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MaterialIcon } from "../ui/MaterialIcon";
 import Image from "next/image";
+import { User } from "lucide-react";
 
 const navItems = [
   { icon: "dashboard", label: "Dashboard", href: "/pages/dashboard" },
@@ -54,7 +55,7 @@ export function Sidebar() {
         <div className="bg-slate-100 dark:bg-primary/5 rounded-xl p-4 flex flex-col gap-3">
           <div className="flex items-start gap-2">
             <div className="size-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-              <MaterialIcon name="smart_toy" className="!text-sm" />
+              <MaterialIcon name="smart_toy" className="text-sm" />
             </div>
             <p className="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300">
               Analysis complete. Your focus time has increased by 12% this week.
@@ -68,7 +69,7 @@ export function Sidebar() {
             />
             <MaterialIcon
               name="send"
-              className="absolute right-2 top-1.5 !text-sm text-slate-400"
+              className="absolute right-2 top-1.5 text-sm text-slate-400"
             />
           </div>
         </div>
