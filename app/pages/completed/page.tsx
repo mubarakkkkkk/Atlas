@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
-import { Header } from "../../components/layout/Header";
 import { MaterialIcon } from "../../components/ui/MaterialIcon";
 import {
   CompletedStats,

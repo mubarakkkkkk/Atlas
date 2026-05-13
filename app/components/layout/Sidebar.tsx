@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MaterialIcon } from "../ui/MaterialIcon";
 import Image from "next/image";
-import { User } from "lucide-react";
 
 const navItems = [
   { icon: "dashboard", label: "Dashboard", href: "/pages/dashboard" },

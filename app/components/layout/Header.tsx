@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MaterialIcon } from "../ui/MaterialIcon";
 import { User } from "lucide-react";
 

@@ -14,7 +14,6 @@ import {
 import type {
   TodayTask,
   TimelineEvent,
-  TodayStats as StatsType,
   Insight,
   ContextInfo,
 } from "../../components/today";

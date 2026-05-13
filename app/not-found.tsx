@@ -5,7 +5,6 @@ import Image from "next/image";
 const NotFoundPage = () => {
   return (
     <div className="h-screen bg-[#11131c] text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
-      {/* ── NAVBAR ─────────────────────────────────────────── */}
       <nav className="w-full sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800/50">
         <div className="flex justify-between items-center px-6 py-4 max-w-full mx-auto">
           <div className="flex items-center gap-8">
@@ -29,8 +28,6 @@ const NotFoundPage = () => {
           </div>
         </div>
       </nav>
-
-      {/* ── MAIN ───────────────────────────────────────────── */}
       <main className="flex-1 flex items-center justify-center px-6 relative overflow-hidden">
         {/* Background glow */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20 flex items-center justify-center">
@@ -51,8 +48,6 @@ const NotFoundPage = () => {
               ERROR 404
             </span>
           </div>
-
-          {/* Headline */}
           <h1 className="text-5xl md:text-6xl font-black text-white mb-4 leading-none tracking-tight">
             Lost in the{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-sky-400">
@@ -66,8 +61,6 @@ const NotFoundPage = () => {
             Don&apos;t worry, I can help you find your way back to the command
             center.
           </p>
-
-          {/* Illustration */}
           <div className="mb-12 flex justify-center">
             <div className="relative w-48 h-48">
               {/* Background compass */}
@@ -78,7 +71,6 @@ const NotFoundPage = () => {
                   strokeWidth={0.5}
                 />
               </div>
-              {/* Foreground rocket */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="p-5 rounded-full bg-blue-600/10 shadow-[0_0_30px_rgba(13,89,242,0.3)]">
                   <Rocket
@@ -88,13 +80,10 @@ const NotFoundPage = () => {
                   />
                 </div>
               </div>
-              {/* Orbiting dots */}
               <div className="absolute top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
               <div className="absolute bottom-8 right-1 w-2 h-2 bg-blue-400 rounded-full opacity-50" />
             </div>
           </div>
-
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/pages/dashboard"
@@ -117,8 +106,6 @@ const NotFoundPage = () => {
               </Link>
             </div>
           </div>
-
-          {/* Terminal log snippet */}
           <div className="mt-16 p-4 rounded-lg bg-black/30 border border-slate-800/50 inline-block text-left">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-2 rounded-full bg-red-500" />
@@ -140,8 +127,6 @@ const NotFoundPage = () => {
           </div>
         </div>
       </main>
-
-      {/* ── FOOTER ─────────────────────────────────────────── */}
       <footer className="w-full py-4 bg-background-dark border-t border-slate-800/50">
   <div className="flex items-center justify-center gap-8">
     {["Privacy Policy", "Terms of Service", "Security"].map((item) => (
