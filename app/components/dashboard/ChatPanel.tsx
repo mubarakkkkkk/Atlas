@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { MaterialIcon } from "../ui/MaterialIcon";
+import { User } from "lucide-react";
 
 interface Message {
   role: "assistant" | "user";
@@ -31,14 +32,14 @@ const messages: Message[] = [
 function AssistantMessage({ content, isLoading }: { content: string; isLoading?: boolean }) {
   return (
     <div className="flex gap-4 max-w-2xl">
-      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+      <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center text-primary shrink-0">
         <MaterialIcon name="smart_toy" className="text-lg" />
       </div>
       <div className="space-y-1">
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-1 uppercase tracking-wider">
           Assistant
         </p>
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-xl rounded-tl-none border border-slate-100 dark:border-slate-700 shadow-sm">
+        <div className="bg-primary/6 p-4 rounded-xl rounded-tl-none border border-primary shadow-sm">
           <p className="text-sm leading-relaxed">{content}</p>
           {isLoading && (
             <div className="mt-3 flex items-center gap-2 text-xs text-primary font-medium animate-pulse">
@@ -55,14 +56,8 @@ function AssistantMessage({ content, isLoading }: { content: string; isLoading?:
 function UserMessage({ content }: { content: string }) {
   return (
     <div className="flex gap-4 max-w-2xl ml-auto flex-row-reverse">
-      <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center shrink-0 overflow-hidden">
-        <Image
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWgCEiY5H9lV266T4IU2Y4H8JLQRV-sGe6Js54V2t2TqXEG8KSXR9hVMsZEb4ZnP302TbldiDavWPaK9yFDHKOehPIJfY9A7IatOJz2ON9R2TmjrPw3SdLpr7LtyqSoVVGq8NREDnw4JUFHV-7fBjIX4zhLCaeQjMYNL15IN1zZXrWX3QGvZGLF8u5XwqpQaHMzKqaeSbtrdsv86gMFVfPceHfE6Ot4Fg4CtSRruVpEU5F2mCIAD6Uh-kzrhCTvAX8Itco-Om-FrFg"
-          alt="User avatar"
-          width={32}
-          height={32}
-          className="w-full h-full object-cover"
-        />
+      <div className="w-8 h-8 rounded-lg bg-red-800 dark:bg-slate-700 flex items-center justify-center shrink-0 overflow-hidden">
+        <User />
       </div>
       <div className="space-y-1 text-right">
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1 uppercase tracking-wider">
@@ -78,7 +73,7 @@ function UserMessage({ content }: { content: string }) {
 
 export function ChatPanel() {
   return (
-    <section className="flex-1 flex flex-col bg-slate-50 dark:bg-[#0d111a] relative border-r border-slate-200 dark:border-slate-800">
+    <section className="flex-1 flex flex-col bg-background-dark relative border-r border-primary">
       <div className="flex-1 overflow-y-auto p-8 space-y-6 custom-scrollbar">
         {messages.map((message, index) =>
           message.role === "assistant" ? (
@@ -110,10 +105,10 @@ export function ChatPanel() {
       </div>
 
       {/* Input Area */}
-      <div className="p-6 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+      <div className="p-6 bg-background-light dark:bg-background-dark border-t border-primary">
         <div className="max-w-3xl mx-auto relative group">
           <div className="absolute -inset-1 bg-linear-to-r from-primary/50 to-primary/0 rounded-xl blur opacity-25 group-focus-within:opacity-50 transition duration-1000" />
-          <div className="relative bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-2 p-2 pr-3">
+          <div className="relative bg-background-dark rounded-xl border border-primary shadow-sm flex items-center gap-2 p-2 pr-3">
             <button className="flex items-center justify-center w-9 h-9 text-slate-400 hover:text-primary transition-colors shrink-0">
               <MaterialIcon name="add_circle" className="text-xl" />
             </button>

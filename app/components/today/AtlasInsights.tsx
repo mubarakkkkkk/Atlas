@@ -9,13 +9,18 @@ interface AtlasInsightsProps {
   onDismiss?: () => void;
 }
 
-const INSIGHT_ICONS: Record<Insight["type"], { icon: string; color: string }> = {
-  suggestion: { icon: "lightbulb", color: "text-amber-500" },
-  info: { icon: "info", color: "text-blue-500" },
-  warning: { icon: "warning", color: "text-red-500" },
-};
+const INSIGHT_ICONS: Record<Insight["type"], { icon: string; color: string }> =
+  {
+    suggestion: { icon: "lightbulb", color: "text-primary" },
+    info: { icon: "info", color: "text-primary-light" },
+    warning: { icon: "warning", color: "text-primary-dark" },
+  };
 
-export function AtlasInsights({ insights, onReorganize, onDismiss }: AtlasInsightsProps) {
+export function AtlasInsights({
+  insights,
+  onReorganize,
+  onDismiss,
+}: AtlasInsightsProps) {
   return (
     <section className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/20">
       <div className="flex items-center gap-3 mb-6">
@@ -33,13 +38,18 @@ export function AtlasInsights({ insights, onReorganize, onDismiss }: AtlasInsigh
           const iconConfig = INSIGHT_ICONS[insight.type];
           return (
             <div key={insight.id} className="flex gap-4">
-              <MaterialIcon name={iconConfig.icon} className={`${iconConfig.color} shrink-0`} />
+              <MaterialIcon
+                name={iconConfig.icon}
+                className={`${iconConfig.color} shrink-0`}
+              />
               <div>
                 <p className="text-sm font-medium leading-relaxed">
                   {insight.highlight ? (
                     <>
                       {insight.message.split(insight.highlight)[0]}
-                      <span className="text-primary font-bold">{insight.highlight}</span>
+                      <span className="text-primary font-bold">
+                        {insight.highlight}
+                      </span>
                       {insight.message.split(insight.highlight)[1]}
                     </>
                   ) : (
@@ -62,7 +72,7 @@ export function AtlasInsights({ insights, onReorganize, onDismiss }: AtlasInsigh
         </button>
         <button
           onClick={onDismiss}
-          className="w-full py-2.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all"
+          className="w-full py-2.5 bg-background-light dark:bg-background-dark text-foreground dark:text-foreground border border-primary/20 dark:border-primary/10 rounded-xl text-sm font-bold hover:bg-primary/5 dark:hover:bg-primary/5 transition-all\"
         >
           Ignore Suggestions
         </button>

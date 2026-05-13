@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen w-full bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 flex flex-col">
       {/* ── HEADER ─────────────────────────────────────────── */}
-      <header className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 md:px-10 py-5 shrink-0">
+      <header className="flex items-center justify-between border-b border-primary/20 dark:border-primary/10 px-6 md:px-10 py-5 shrink-0">
         <div className="flex items-center gap-3">
           <Image
             src="/images/cropedNoBg.png"
@@ -25,10 +25,10 @@ const HomePage = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-widest hidden sm:block">
+          <span className="text-xs font-medium text-foreground/60 dark:text-foreground/70 uppercase tracking-widest hidden sm:block">
             Contact Us
           </span>
-          <button className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+          <button className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20 text-foreground dark:text-foreground/90 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
             <HelpCircle size={20} />
           </button>
         </div>
@@ -49,7 +49,7 @@ const HomePage = () => {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "radial-gradient(circle at center, rgba(13,89,242,0.18) 0%, transparent 70%)",
+                      "radial-gradient(circle at center, rgba(16,185,129,0.18) 0%, transparent 70%)",
                   }}
                 />
 
@@ -58,10 +58,10 @@ const HomePage = () => {
                   <Terminal className="text-primary" size={20} />
                 </div>
                 <div className="absolute bottom-10 right-8 rounded-xl bg-white/10 border border-white/10 p-3 shadow-2xl backdrop-blur-sm">
-                  <GiStarsStack className="text-emerald-400" size={22} />
+                  <GiStarsStack className="text-accent" size={22} />
                 </div>
                 <div className="absolute top-1/4 right-5 rounded-lg bg-white/10 border border-white/10 p-2 shadow-xl opacity-60 backdrop-blur-sm">
-                  <Database className="text-sky-300" size={18} />
+                  <Database className="text-primary-light" size={18} />
                 </div>
 
                 {/* Centre orb */}
@@ -69,7 +69,7 @@ const HomePage = () => {
                   <div className="relative h-48 w-48 flex items-center justify-center">
                     <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-[spin_20s_linear_infinite]" />
                     <div className="absolute inset-4 rounded-full border border-primary/40" />
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary shadow-[0_0_50px_rgba(13,89,242,0.55)] text-white">
+                    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary shadow-[0_0_50px_rgba(16,185,129,0.55)] text-white">
                       <BsGearWideConnected size={40} />
                     </div>
                   </div>
@@ -88,7 +88,7 @@ const HomePage = () => {
               <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
                 Neural Engine Active
               </span>
-              <span className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">
+              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
                 V 2.0.4-Beta
               </span>
             </div>
@@ -97,16 +97,16 @@ const HomePage = () => {
           {/* RIGHT — Copy & CTA */}
           <div className="flex flex-col gap-8 order-1 lg:order-2">
             {/* Step pill */}
-            <span className="w-fit rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            <span className="w-fit rounded-full border border-primary/20 dark:border-primary/10 bg-primary/5 dark:bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary dark:text-primary-light">
               Step 1 of 4
             </span>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-slate-900 dark:text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-foreground dark:text-foreground">
                 Welcome to <span className="text-primary">Atlas</span>
               </h2>
-              <p className="max-w-md text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="max-w-md text-lg leading-relaxed text-foreground/70 dark:text-foreground/70">
                 Let&apos;s set up your assistant to match your workflow. Boost
                 your productivity with context-aware AI built for developers.
               </p>
@@ -123,16 +123,15 @@ const HomePage = () => {
                   />
                 </button>
               </Link>
-             <Link
-             href="/signin"
-             >
-              <button className="flex h-14 items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-8 text-base font-bold text-slate-900 dark:text-white transition-all hover:bg-slate-200 dark:hover:bg-slate-700">
-                I&apos;ve used Atlas before
-              </button></Link>
+              <Link href="/signin">
+                <button className="flex h-14 items-center justify-center gap-2 rounded-xl border border-primary/20 dark:border-primary/10 bg-primary/5 dark:bg-primary/10 px-8 text-base font-bold text-foreground dark:text-foreground transition-all hover:bg-primary/10 dark:hover:bg-primary/20">
+                  I&apos;ve used Atlas before
+                </button>
+              </Link>
             </div>
 
             {/* Social proof */}
-            <div className="pt-8 border-t border-slate-200 dark:border-slate-800">
+            <div className="pt-8 border-t border-primary/20 dark:border-primary/10">
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-3">
                   {[
@@ -142,7 +141,7 @@ const HomePage = () => {
                   ].map((src, i) => (
                     <div
                       key={i}
-                      className="h-10 w-10 overflow-hidden rounded-full border-2 border-white dark:border-slate-900 bg-slate-700"
+                      className="h-10 w-10 overflow-hidden rounded-full border-2 border-background-light dark:border-background-dark bg-foreground/30 dark:bg-foreground/30"
                     >
                       <img
                         src={src}
@@ -153,10 +152,10 @@ const HomePage = () => {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <p className="font-semibold text-slate-900 dark:text-slate-200">
+                  <p className="font-semibold text-foreground dark:text-foreground">
                     Join 10k+ engineers
                   </p>
-                  <p className="text-slate-500 dark:text-slate-400">
+                  <p className="text-foreground/60 dark:text-foreground/70">
                     Integrating Atlas into their daily dev cycle.
                   </p>
                 </div>
@@ -167,7 +166,7 @@ const HomePage = () => {
       </main>
 
       {/* ── FOOTER ─────────────────────────────────────────── */}
-      <footer className="shrink-0 border-t border-slate-200 dark:border-slate-800 px-6 md:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 text-xs uppercase tracking-widest">
+      <footer className="shrink-0 border-t border-primary/20 dark:border-primary/10 px-6 md:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-foreground/60 text-xs uppercase tracking-widest">
         <div className="flex gap-6">
           <Link href="#" className="transition-colors hover:text-primary">
             Privacy Policy

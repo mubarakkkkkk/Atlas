@@ -35,14 +35,18 @@ export function TaskList({
               <div
                 key={task.id}
                 onClick={() => onTaskClick?.(task)}
-                className="bg-white dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800 p-4 flex items-center gap-4 cursor-pointer hover:border-primary/50 transition-colors"
+                className="bg-background-light dark:bg-background-dark/40 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4 cursor-pointer hover:border-primary/50 transition-colors"
               >
                 <div className="size-5 rounded border-2 border-primary flex items-center justify-center">
                   <div className="size-2.5 bg-primary rounded-sm" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">{task.title}</h4>
-                  {task.project && <p className="text-xs text-slate-500">Project: {task.project}</p>}
+                  {task.project && (
+                    <p className="text-xs text-foreground/60">
+                      Project: {task.project}
+                    </p>
+                  )}
                 </div>
                 {task.elapsedTime !== undefined && (
                   <div className="text-xs font-mono text-primary font-bold">
@@ -58,7 +62,7 @@ export function TaskList({
       {/* Upcoming */}
       {upcomingTasks.length > 0 && (
         <div>
-          <h3 className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
+          <h3 className="text-sm font-bold text-foreground/50 dark:text-foreground/60 uppercase tracking-widest mb-4\">
             Upcoming
           </h3>
           <div className="space-y-2">
@@ -66,16 +70,23 @@ export function TaskList({
               <div
                 key={task.id}
                 onClick={() => onTaskClick?.(task)}
-                className="bg-white dark:bg-slate-800/20 rounded-xl border border-slate-200 dark:border-slate-800 p-4 flex items-center gap-4 hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer transition-colors"
+                className="bg-background-light dark:bg-background-dark/20 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4 hover:border-primary/30 dark:hover:border-primary/20 cursor-pointer transition-colors"
               >
-                <div className="size-5 rounded border-2 border-slate-300 dark:border-slate-600 shrink-0" />
+                <div className="size-5 rounded border-2 border-foreground/30 dark:border-foreground/30 shrink-0" />
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">{task.title}</h4>
-                  <p className="text-xs text-slate-500">
-                    {task.startTime ? `Start by ${task.startTime}` : task.project ? `Project: ${task.project}` : ""}
+                  <p className="text-xs text-foreground/60">
+                    {task.startTime
+                      ? `Start by ${task.startTime}`
+                      : task.project
+                        ? `Project: ${task.project}`
+                        : ""}
                   </p>
                 </div>
-                <MaterialIcon name="chevron_right" className="text-slate-400 text-lg" />
+                <MaterialIcon
+                  name="chevron_right"
+                  className="text-foreground/50 text-lg"
+                />
               </div>
             ))}
           </div>
@@ -85,22 +96,26 @@ export function TaskList({
       {/* Completed */}
       {completedTasks.length > 0 && (
         <div>
-          <h3 className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
+          <h3 className="text-sm font-bold text-foreground/50 dark:text-foreground/60 uppercase tracking-widest mb-4\">
             Completed Today
           </h3>
-          <div className="space-y-2 opacity-60">
+          <div className="space-y-2 opacity-60\">
             {completedTasks.map((task) => (
               <div
                 key={task.id}
-                className="bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800 p-4 flex items-center gap-4"
+                className="bg-primary/5 dark:bg-primary/5 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4\"
               >
-                <div className="size-5 rounded bg-emerald-500 flex items-center justify-center text-white shrink-0">
+                <div className="size-5 rounded bg-primary-light flex items-center justify-center text-white shrink-0\">
                   <MaterialIcon name="check" className="text-xs" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-sm font-semibold line-through">{task.title}</h4>
-                  <p className="text-xs text-slate-500">
-                    {task.completedAt ? `Completed at ${task.completedAt}` : "Completed"}
+                  <h4 className="text-sm font-semibold line-through\">
+                    {task.title}
+                  </h4>
+                  <p className="text-xs text-foreground/60\">
+                    {task.completedAt
+                      ? `Completed at ${task.completedAt}`
+                      : "Completed"}
                   </p>
                 </div>
               </div>

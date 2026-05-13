@@ -61,8 +61,8 @@ export function WeeklyChart() {
 
     const ctx = chart.ctx;
     const gradient = ctx.createLinearGradient(0, 0, 0, chart.height);
-    gradient.addColorStop(0, "rgba(13, 89, 242, 1)");
-    gradient.addColorStop(1, "rgba(13, 89, 242, 0.6)");
+    gradient.addColorStop(0, "rgba(16, 185, 129, 1)");
+    gradient.addColorStop(1, "rgba(16, 185, 129, 0.6)");
 
     chart.data.datasets[0].backgroundColor = gradient;
     chart.update();
@@ -74,22 +74,22 @@ export function WeeklyChart() {
       {
         label: "Completed",
         data: weeklyData.map((d) => d.completed),
-        backgroundColor: "#0d59f2",
+        backgroundColor: "#10b981",
         borderRadius: 8,
         borderSkipped: false,
         barPercentage: 0.6,
         categoryPercentage: 0.7,
-        hoverBackgroundColor: "#3b82f6",
+        hoverBackgroundColor: "#34d399",
       },
       {
         label: "Goal",
         data: weeklyData.map((d) => d.goal),
-        backgroundColor: "rgba(13, 89, 242, 0.08)",
+        backgroundColor: "rgba(16, 185, 129, 0.08)",
         borderRadius: 8,
         borderSkipped: false,
         barPercentage: 0.6,
         categoryPercentage: 0.7,
-        hoverBackgroundColor: "rgba(13, 89, 242, 0.15)",
+        hoverBackgroundColor: "rgba(16, 185, 129, 0.15)",
       },
     ],
   };
@@ -203,7 +203,7 @@ export function WeeklyChart() {
   };
 
   return (
-    <div className="lg:col-span-2 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+    <div className="lg:col-span-2 bg-background-light dark:bg-background-dark/50 rounded-2xl border border-primary/20 dark:border-primary/10 shadow-sm overflow-hidden\">
       {/* Header */}
       <div className="px-6 pt-6 pb-4">
         <div className="flex items-start justify-between">

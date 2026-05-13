@@ -9,7 +9,11 @@ interface ReminderToastProps {
   onDismiss?: () => void;
 }
 
-export function ReminderToast({ title, message, onDismiss }: ReminderToastProps) {
+export function ReminderToast({
+  title,
+  message,
+  onDismiss,
+}: ReminderToastProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleDismiss = () => {
@@ -21,7 +25,7 @@ export function ReminderToast({ title, message, onDismiss }: ReminderToastProps)
 
   return (
     <div className="fixed bottom-6 right-6 z-50 animate-pulse">
-      <div className="bg-slate-900 text-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border border-slate-800 min-w-[320px]">
+      <div className="bg-primary text-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border border-primary-dark min-w-[320px]\">
         <div className="size-10 bg-primary/20 rounded-lg flex items-center justify-center text-primary">
           <MaterialIcon name="notification_important" />
         </div>
@@ -33,7 +37,7 @@ export function ReminderToast({ title, message, onDismiss }: ReminderToastProps)
         </div>
         <button
           onClick={handleDismiss}
-          className="text-slate-500 hover:text-white transition-colors"
+          className="text-white/70 hover:text-white transition-colors\"
         >
           <MaterialIcon name="close" />
         </button>

@@ -21,11 +21,12 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
       className={`
         group relative p-4 rounded-xl border transition-all cursor-pointer
         ${isDragging ? "shadow-2xl scale-105 rotate-2" : ""}
-        ${isCompleted 
-          ? "bg-white/50 dark:bg-slate-800/20 border-slate-200 dark:border-slate-800 opacity-70" 
-          : isInProgress
-            ? "bg-primary/5 border-primary/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
-            : "bg-white dark:bg-slate-800/40 border-slate-200 dark:border-slate-800 hover:border-primary/40 hover:shadow-md"
+        ${
+          isCompleted
+            ? "bg-background-light/50 dark:bg-background-dark/20 border-primary/20 dark:border-primary/10 opacity-70"
+            : isInProgress
+              ? "bg-primary/5 border-primary/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
+              : "bg-background-light dark:bg-background-dark/40 border-primary/20 dark:border-primary/10 hover:border-primary/40 hover:shadow-md"
         }
       `}
     >
@@ -35,21 +36,26 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
 
       {/* Header */}
       <div className="flex items-start justify-between gap-2 mb-2">
-        <h3 className={`text-sm font-semibold leading-tight ${
-          isCompleted 
-            ? "text-slate-400 line-through" 
-            : "text-slate-900 dark:text-slate-100 group-hover:text-primary"
-        } transition-colors`}>
+        <h3
+          className={`text-sm font-semibold leading-tight ${
+            isCompleted
+              ? "text-foreground/50 line-through"
+              : "text-foreground dark:text-foreground group-hover:text-primary"
+          } transition-colors`}
+        >
           {task.title}
         </h3>
         {isCompleted && (
-          <MaterialIcon name="check_circle" className="text-emerald-500 text-base shrink-0" />
+          <MaterialIcon
+            name="check_circle"
+            className="text-primary-light text-base shrink-0"
+          />
         )}
       </div>
 
       {/* Description */}
       {task.description && !isCompleted && (
-        <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-3">
+        <p className="text-xs text-foreground/60 dark:text-foreground/70 line-clamp-2 mb-3">
           {task.description}
         </p>
       )}
@@ -75,13 +81,15 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
       {isInProgress && task.progress !== undefined && (
         <div className="mb-3">
           <div className="flex items-center justify-between mb-1">
-            <span className="text-[10px] text-slate-500">Progress</span>
-            <span className="text-[10px] font-bold text-primary">{task.progress}%</span>
+            <span className="text-[10px] text-foreground/60">Progress</span>
+            <span className="text-[10px] font-bold text-primary">
+              {task.progress}%
+            </span>
           </div>
           <div className="w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
-            <div 
-              className="bg-primary h-full rounded-full transition-all duration-500" 
-              style={{ width: `${task.progress}%` }} 
+            <div
+              className="bg-primary h-full rounded-full transition-all duration-500"
+              style={{ width: `${task.progress}%` }}
             />
           </div>
         </div>
@@ -89,20 +97,22 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
 
       {/* Footer */}
       {!isCompleted && (
-        <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/50">
+        <div className="flex items-center justify-between pt-2 border-t border-primary/10 dark:border-primary/10">
           <div className="flex items-center gap-3">
             {/* Priority */}
-            <span className={`flex items-center gap-1 text-[10px] font-semibold ${priorityConfig.color}`}>
-              <MaterialIcon 
-                name={task.priority === "urgent" ? "priority_high" : "flag"} 
-                className="text-xs" 
+            <span
+              className={`flex items-center gap-1 text-[10px] font-semibold ${priorityConfig.color}`}
+            >
+              <MaterialIcon
+                name={task.priority === "urgent" ? "priority_high" : "flag"}
+                className="text-xs"
               />
               {priorityConfig.label}
             </span>
 
             {/* Due date */}
             {task.dueTime && (
-              <span className="flex items-center gap-1 text-[10px] text-slate-400">
+              <span className="flex items-center gap-1 text-[10px] text-foreground/50">
                 <MaterialIcon name="schedule" className="text-xs" />
                 {task.dueTime}
               </span>
@@ -112,7 +122,7 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
           <div className="flex items-center gap-2">
             {/* Comments */}
             {task.comments && task.comments > 0 && (
-              <span className="flex items-center gap-0.5 text-[10px] text-slate-400">
+              <span className="flex items-center gap-0.5 text-[10px] text-foreground/50">
                 <MaterialIcon name="chat_bubble" className="text-xs" />
                 {task.comments}
               </span>
@@ -120,7 +130,7 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
 
             {/* Attachments */}
             {task.attachments && task.attachments > 0 && (
-              <span className="flex items-center gap-0.5 text-[10px] text-slate-400">
+              <span className="flex items-center gap-0.5 text-[10px] text-foreground/50">
                 <MaterialIcon name="attach_file" className="text-xs" />
                 {task.attachments}
               </span>
@@ -132,7 +142,7 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
                 {task.assignees.slice(0, 3).map((avatar, index) => (
                   <div
                     key={index}
-                    className="w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 bg-slate-300 overflow-hidden"
+                    className="w-5 h-5 rounded-full border-2 border-background-light dark:border-background-dark bg-primary/30 overflow-hidden"
                   >
                     <Image
                       src={avatar}
@@ -144,8 +154,8 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
                   </div>
                 ))}
                 {task.assignees.length > 3 && (
-                  <div className="w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                    <span className="text-[8px] font-bold text-slate-500">
+                  <div className="w-5 h-5 rounded-full border-2 border-background-light dark:border-background-dark bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+                    <span className="text-[8px] font-bold text-foreground/60">
                       +{task.assignees.length - 3}
                     </span>
                   </div>

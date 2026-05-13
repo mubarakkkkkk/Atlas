@@ -1,7 +1,12 @@
 "use client";
 
 import { MaterialIcon } from "../ui/MaterialIcon";
-import { TaskPriority, TaskLabel, PRIORITY_CONFIG, LABEL_CONFIG } from "./types";
+import {
+  TaskPriority,
+  TaskLabel,
+  PRIORITY_CONFIG,
+  LABEL_CONFIG,
+} from "./types";
 
 interface BoardFiltersProps {
   searchQuery: string;
@@ -37,7 +42,7 @@ export function BoardFilters({
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search tasks..."
-          className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+          className="w-full bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
         />
       </div>
 
@@ -45,8 +50,10 @@ export function BoardFilters({
         {/* Priority Filter */}
         <select
           value={selectedPriority}
-          onChange={(e) => onPriorityChange(e.target.value as TaskPriority | "all")}
-          className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+          onChange={(e) =>
+            onPriorityChange(e.target.value as TaskPriority | "all")
+          }
+          className="bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
         >
           <option value="all">All Priorities</option>
           {Object.entries(PRIORITY_CONFIG).map(([key, config]) => (
@@ -60,7 +67,7 @@ export function BoardFilters({
         <select
           value={selectedLabel}
           onChange={(e) => onLabelChange(e.target.value as TaskLabel | "all")}
-          className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+          className="bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
         >
           <option value="all">All Labels</option>
           {Object.entries(LABEL_CONFIG).map(([key, config]) => (

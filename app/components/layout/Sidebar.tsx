@@ -18,17 +18,16 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 flex flex-col border-r border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark/50 shrink-0">
-      <div className="p-2">         
-          <Image
-            src="/images/noBg.png"
-            alt="Atlas Logo"
-            width={150}
-            height={50}
-          />
-        </div>
-      <div className="p-6">        
-
+    <aside className="w-64 flex flex-col border-r border-primary bg-background-light dark:bg-background-dark/50 shrink-0">
+      <div className="p-2">
+        <Image
+          src="/images/noBg.png"
+          alt="Atlas Logo"
+          width={150}
+          height={50}
+        />
+      </div>
+      <div className="p-6">
         <nav className="space-y-1">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
@@ -39,7 +38,7 @@ export function Sidebar() {
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                   isActive
                     ? "bg-primary text-white"
-                    : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10"
+                    : "text-foreground/70 dark:text-foreground/70 hover:bg-primary/10 dark:hover:bg-primary/10"
                 }`}
               >
                 <MaterialIcon name={item.icon} />
@@ -50,25 +49,25 @@ export function Sidebar() {
         </nav>
       </div>
 
-      <div className="mt-auto p-4 border-t border-slate-200 dark:border-primary/10">
-        <div className="bg-slate-100 dark:bg-primary/5 rounded-xl p-4 flex flex-col gap-3">
+      <div className="mt-auto p-4 border-t border-primary/20 dark:border-primary/10">
+        <div className="bg-primary/5 dark:bg-primary/5 rounded-xl p-4 flex flex-col gap-3">
           <div className="flex items-start gap-2">
             <div className="size-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
               <MaterialIcon name="smart_toy" className="text-sm" />
             </div>
-            <p className="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300">
+            <p className="text-[11px] leading-relaxed text-foreground/70 dark:text-foreground/70">
               Analysis complete. Your focus time has increased by 12% this week.
             </p>
           </div>
           <div className="relative">
             <input
               type="text"
-              className="w-full bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/20 rounded-lg py-1.5 pl-3 pr-8 text-xs focus:ring-1 focus:ring-primary focus:outline-none"
+              className="w-full bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg py-1.5 pl-3 pr-8 text-xs focus:ring-1 focus:ring-primary focus:outline-none"
               placeholder="Ask Atlas..."
             />
             <MaterialIcon
               name="send"
-              className="absolute right-2 top-1.5 text-sm text-slate-400"
+              className="absolute right-2 top-1.5 text-sm text-foreground/50 dark:text-foreground/50"
             />
           </div>
         </div>

@@ -13,16 +13,16 @@ export function Header({
   actionIcon = "calendar_today",
 }: HeaderProps) {
   return (
-    <header className="h-16 border-b border-slate-200 dark:border-primary/10 bg-white/50 dark:bg-background-dark/50 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+    <header className="h-16 border-b border-primary/20 dark:border-primary/10 bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
       <div className="flex items-center flex-1 max-w-md">
         <div className="relative w-full">
           <MaterialIcon
             name="search"
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/50"
           />
           <input
             type="text"
-            className="w-full bg-slate-100 dark:bg-primary/5 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+            className="w-full bg-primary/5 dark:bg-primary/5 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
             placeholder={searchPlaceholder}
           />
         </div>
@@ -33,11 +33,11 @@ export function Header({
           <MaterialIcon name={actionIcon} className="text-sm" />
           {actionLabel}
         </button>
-        <button className="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg relative">
+        <button className="p-2 text-foreground/60 dark:text-foreground/60 hover:bg-primary/10 dark:hover:bg-primary/10 rounded-lg relative">
           <MaterialIcon name="notifications" />
-          <span className="absolute top-2 right-2.5 size-2 bg-red-500 border-2 border-white dark:border-background-dark rounded-full" />
+          <span className="absolute top-2 right-2.5 size-2 bg-primary-dark border-2 border-background-light dark:border-background-dark rounded-full" />
         </button>
-        <button className="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg relative">
+        <button className="p-2 text-foreground/60 dark:text-foreground/60 hover:bg-primary/10 dark:hover:bg-primary/10 rounded-lg relative">
           <User />
         </button>
       </div>

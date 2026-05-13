@@ -14,36 +14,39 @@ export function DailyTimeline({ events }: DailyTimelineProps) {
         <MaterialIcon name="schedule" className="text-lg" />
         Daily Timeline
       </h3>
-      <div className="bg-white dark:bg-slate-800/20 rounded-xl p-6 border border-slate-200 dark:border-slate-800">
+      <div className="bg-background-light dark:bg-background-dark/20 rounded-xl p-6 border border-primary/20 dark:border-primary/10\">
         <div className="space-y-0">
           {events.map((event, index) => {
             const isLast = index === events.length - 1;
             const priorityConfig = PRIORITY_CONFIG[event.priority];
             const categoryConfig = CATEGORY_CONFIG[event.category];
 
-            let borderColor = "border-slate-300 dark:border-slate-700";
+            let borderColor = "border-primary/30 dark:border-primary/20";
             if (event.isCompleted) {
-              borderColor = "border-emerald-500";
+              borderColor = "border-primary-light";
             } else if (event.isCurrent) {
               borderColor = "border-primary";
             }
 
             return (
-              <div key={event.id} className={`relative flex gap-6 ${!isLast ? "pb-6" : ""}`}>
+              <div
+                key={event.id}
+                className={`relative flex gap-6 ${!isLast ? "pb-6" : ""}`}
+              >
                 {/* Timeline line */}
                 {!isLast && (
                   <div
                     className={`absolute left-[11px] ${index === 0 ? "top-6" : "top-0"} bottom-0 w-px ${
                       event.isCompleted || event.isCurrent
-                        ? "bg-slate-200 dark:bg-slate-800"
-                        : "border-l border-dashed border-slate-200 dark:border-slate-800"
+                        ? "bg-primary/20 dark:bg-primary/20"
+                        : "border-l border-dashed border-primary/20 dark:border-primary/10"
                     }`}
                   />
                 )}
 
                 {/* Timeline dot */}
                 <div
-                  className={`relative z-10 size-[23px] rounded-full bg-slate-100 dark:bg-slate-800 border-4 ${borderColor} shrink-0`}
+                  className={`relative z-10 size-[23px] rounded-full bg-primary/10 dark:bg-primary/10 border-4 ${borderColor} shrink-0`}
                 />
 
                 {/* Content */}
@@ -51,12 +54,16 @@ export function DailyTimeline({ events }: DailyTimelineProps) {
                   <div className="flex items-center justify-between mb-1">
                     <h4
                       className={`font-semibold text-sm ${
-                        !event.isCompleted && !event.isCurrent ? "text-slate-500" : ""
+                        !event.isCompleted && !event.isCurrent
+                          ? "text-foreground/60"
+                          : ""
                       }`}
                     >
                       {event.title}
                     </h4>
-                    <span className={`text-xs ${event.isCurrent ? "text-slate-500" : "text-slate-400"}`}>
+                    <span
+                      className={`text-xs ${event.isCurrent ? "text-foreground/60" : "text-foreground/50"}`}
+                    >
                       {event.startTime} - {event.endTime}
                     </span>
                   </div>
@@ -66,7 +73,7 @@ export function DailyTimeline({ events }: DailyTimelineProps) {
                     >
                       {priorityConfig.label}
                     </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-medium">
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-primary/10 dark:bg-primary/10 text-foreground/60 dark:text-foreground/60 font-medium\">
                       {categoryConfig.label}
                     </span>
                   </div>
