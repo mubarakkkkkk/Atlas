@@ -11,7 +11,7 @@ export function CompletionTimeline({ blocks, progress }: CompletionTimelineProps
   return (
     <div className="flex flex-col gap-6">
       <h3 className="text-lg font-bold">Completion Timeline</h3>
-      <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 relative overflow-hidden">
+      <div className="bg-primary/5 p-6 rounded-xl border border-primary relative overflow-hidden">
         {/* Progress bar at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-1 bg-primary/20">
           <div className="h-full bg-primary transition-all duration-500" style={{ width: `${progress}%` }} />

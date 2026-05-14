@@ -22,7 +22,7 @@ const INSIGHT_ICONS: Record<Insight["type"], { icon: React.ReactNode; color: str
 
 export function AssistantReflection({ insights, onViewDetails }: AssistantReflectionProps) {
   return (
-    <div className="bg-primary/5 p-6 rounded-xl border border-primary/20">
+    <div className="bg-primary/5 p-6 rounded-xl border border-primary">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-primary rounded-lg text-white">
           <BrainCircuit size={20} />

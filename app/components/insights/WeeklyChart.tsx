@@ -14,7 +14,6 @@ import {
   ChartData,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { MaterialIcon } from "../ui/MaterialIcon";
 import { CircleCheck, Percent, TrendingUp, Trophy } from "lucide-react";
 
 ChartJS.register(

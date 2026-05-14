@@ -1,7 +1,6 @@
 "use client";
 
 import { Check, History, User, Bot } from "lucide-react";
-import { MaterialIcon } from "../ui/MaterialIcon";
 import { CompletedTask } from "./types";
 
 interface TaskHistoryCardProps {
@@ -49,7 +48,7 @@ export function TaskHistoryCard({ task }: TaskHistoryCardProps) {
   const durationDiff = formatDurationDiff(task.duration, task.estimatedDuration);
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all flex items-center justify-between">
+    <div className="bg-primary/5 p-4 rounded-xl border border-primary hover:border-primary/50 transition-all flex items-center justify-between">
       <div className="flex items-center gap-4">
         <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
           <Check />

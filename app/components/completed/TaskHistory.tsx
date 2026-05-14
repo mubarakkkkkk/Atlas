@@ -63,10 +63,14 @@ export function TaskHistory({ tasks }: TaskHistoryProps) {
 
       <div className="flex flex-col gap-3">
         {filteredTasks.length > 0 ? (
-          filteredTasks.map((task) => <TaskHistoryCard key={task.id} task={task} />)
+          filteredTasks.map((task) => (
+            <TaskHistoryCard key={task.id} task={task} />
+          ))
         ) : (
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
-            <p className="text-slate-500 text-sm">No completed tasks for this period</p>
+          <div className="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+            <p className="text-slate-500 text-sm">
+              No completed tasks for this period
+            </p>
           </div>
         )}
       </div>

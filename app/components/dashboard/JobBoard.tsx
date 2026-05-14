@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleX, EllipsisVertical, KanbanSquare } from "lucide-react";
 
 interface Task {
   id: string;
@@ -107,7 +107,7 @@ function CompletedTaskCard({ title }: { title: string }) {
     <div className="bg-white dark:bg-slate-800/20 p-3 rounded-xl border border-slate-200 dark:border-slate-800 line-through">
       <div className="flex items-start justify-between mb-1">
         <h3 className="text-sm font-medium text-slate-400">{title}</h3>
-        <MaterialIcon name="check_circle" className="text-emerald-500 text-sm" />
+        <CircleX className="text-emerald-500 text-sm" />
       </div>
     </div>
   );
@@ -118,11 +118,11 @@ export function JobBoard() {
     <section className="w-80 flex flex-col bg-background-light dark:bg-background-dark overflow-y-auto custom-scrollbar">
       <div className="p-6 border-b border-primary flex items-center justify-between">
         <h2 className="font-bold flex items-center gap-2">
-          <MaterialIcon name="view_kanban" className="text-primary" />
+          <KanbanSquare className="text-primary" />
           Job Board
         </h2>
         <button className="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
-          <MaterialIcon name="more_vert" className="text-slate-400" />
+          <EllipsisVertical className="text-slate-400" />
         </button>
       </div>
 

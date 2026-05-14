@@ -15,10 +15,12 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
   return (
     <section
       id="appearance"
-      className="bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm"
+      className="bg-background-dark rounded-xl border border-primary overflow-hidden shadow-sm"
     >
-      <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-        <h3 className="font-bold text-slate-900 dark:text-slate-100">Appearance</h3>
+      <div className="px-6 py-4 border-b border-primary">
+        <h3 className="font-bold text-slate-900 dark:text-slate-100">
+          Appearance
+        </h3>
       </div>
       <div className="p-6 space-y-8">
         <div className="space-y-4">
@@ -34,7 +36,7 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
                   : "border-slate-200 dark:border-slate-700 bg-white dark:bg-transparent text-slate-500 dark:text-slate-400"
               }`}
             >
-              <div className="w-full h-20 rounded bg-slate-900 overflow-hidden border border-slate-800 p-2 flex gap-1">
+              <div className="w-full h-20 rounded bg-background-dark overflow-hidden border border-slate-800 p-2 flex gap-1">
                 <div className="w-4 h-full bg-slate-800 rounded-sm" />
                 <div className="flex-1 space-y-1">
                   <div className="w-full h-2 bg-slate-800 rounded-sm" />

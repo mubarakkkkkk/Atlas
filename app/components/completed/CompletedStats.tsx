@@ -39,7 +39,7 @@ export function CompletedStats({ stats }: CompletedStatsProps) {
       {statCards.map((stat) => (
         <div
           key={stat.label}
-          className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1"
+          className="bg-primary/5 p-5 rounded-xl border border-primary flex flex-col gap-1"
         >
           <span className="text-slate-500 text-sm font-medium">{stat.label}</span>
           <div className="flex items-baseline gap-2">

@@ -77,7 +77,7 @@ export function PlanFirstDayStep({
       </div>
 
       {/* Main Card */}
-      <div className="flex flex-col gap-6 p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 shadow-sm">
+      <div className="flex flex-col gap-6 p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/50 shadow-sm">
         {/* Input */}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -122,9 +122,7 @@ export function PlanFirstDayStep({
                 >
                   <Icon
                     className={`w-5 h-5 ${
-                      task.isHighlighted
-                        ? "text-primary"
-                        : "text-slate-400"
+                      task.isHighlighted ? "text-primary" : "text-slate-400"
                     }`}
                   />
 

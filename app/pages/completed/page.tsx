@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
-import { MaterialIcon } from "../../components/ui/MaterialIcon";
 import {
   CompletedStats,
   TaskHistory,
@@ -11,6 +10,7 @@ import {
   CompletedTask,
   TimeBlock,
 } from "../../components/completed";
+import { Download, ListFilter, MessageCircle, Search } from "lucide-react";
 
 const SAMPLE_STATS = {
   completedToday: 12,
@@ -128,7 +128,7 @@ export default function CompletedTasksPage() {
 
       <main className="flex-1 flex flex-col overflow-hidden bg-background-light dark:bg-background-dark">
         {/* Header */}
-        <header className="h-16 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 bg-background-light dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+        <header className="h-16 border-b border-primary flex items-center justify-between px-8 bg-background-light dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
           <div className="flex items-center gap-4">
             <h2 className="text-xl font-bold tracking-tight">
               Completed Tasks
@@ -136,24 +136,24 @@ export default function CompletedTasksPage() {
           </div>
           <div className="flex items-center gap-4">
             <div className="relative">
-              <MaterialIcon
-                name="search"
+              <Search
+              size={20}
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
               />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64 focus:outline-none"
+                className="bg-primary/5 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64 focus:outline-none"
                 placeholder="Search tasks..."
               />
             </div>
             <div className="flex gap-2">
               <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500">
-                <MaterialIcon name="filter_list" />
+                <ListFilter />
               </button>
               <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500">
-                <MaterialIcon name="download" />
+                <Download />
               </button>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function CompletedTasksPage() {
         {/* Floating Chat Button */}
         <div className="fixed bottom-8 right-8">
           <button className="w-14 h-14 bg-primary text-white rounded-full shadow-xl shadow-primary/20 flex items-center justify-center hover:scale-105 transition-transform">
-            <MaterialIcon name="chat_bubble" />
+            <MessageCircle />
           </button>
         </div>
       </main>

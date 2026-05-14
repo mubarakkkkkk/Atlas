@@ -1,7 +1,11 @@
 "use client";
 
-import { CircleCheck, Lightbulb, ListCheck, SlidersHorizontal } from "lucide-react";
-
+import {
+  CircleCheck,
+  Lightbulb,
+  ListCheck,
+  SlidersHorizontal,
+} from "lucide-react";
 
 interface OnboardingCompleteStepProps {
   preferences: {
@@ -67,26 +71,32 @@ export function OnboardingCompleteStep({
 
       <div className="space-y-6">
         {/* Summary Card */}
-        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 shadow-sm">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/50 p-6 shadow-sm">
           <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-4 flex items-center gap-2">
             <SlidersHorizontal className="text-primary text-xl" />
             Summary of Preferences
           </h3>
           <div className="divide-y divide-slate-100 dark:divide-slate-800">
             <div className="flex justify-between py-3">
-              <p className="text-slate-500 dark:text-slate-400 text-sm">Focus Mode</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
+                Focus Mode
+              </p>
               <p className="text-slate-900 dark:text-white text-sm font-medium">
                 {preferences.focusMode}
               </p>
             </div>
             <div className="flex justify-between py-3">
-              <p className="text-slate-500 dark:text-slate-400 text-sm">Notifications</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
+                Notifications
+              </p>
               <p className="text-slate-900 dark:text-white text-sm font-medium">
                 {preferences.notifications}
               </p>
             </div>
             <div className="flex justify-between py-3">
-              <p className="text-slate-500 dark:text-slate-400 text-sm">Daily Briefing</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
+                Daily Briefing
+              </p>
               <p className="text-slate-900 dark:text-white text-sm font-medium">
                 {preferences.dailyBriefing}
               </p>
@@ -95,7 +105,7 @@ export function OnboardingCompleteStep({
         </div>
 
         {/* Tasks Card */}
-        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 shadow-sm">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/50 p-6 shadow-sm">
           <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-4 flex items-center gap-2">
             <ListCheck className="text-primary text-xl" />
             Today&apos;s Tasks
@@ -108,7 +118,9 @@ export function OnboardingCompleteStep({
               >
                 <div className="h-5 w-5 rounded border-2 border-primary/40 flex-shrink-0" />
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-slate-900 dark:text-white">{task.title}</p>
+                  <p className="text-sm font-medium text-slate-900 dark:text-white">
+                    {task.title}
+                  </p>
                   <p className="text-xs text-slate-500">{task.time}</p>
                 </div>
                 <span
@@ -136,8 +148,9 @@ export function OnboardingCompleteStep({
                 Assistant Insight
               </p>
               <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                You have 3 tasks planned today with 2 focus hours available. Your energy peak is
-                usually at 10 AM, so we&apos;ve slotted your &quot;Deep Work&quot; task then.
+                You have 3 tasks planned today with 2 focus hours available.
+                Your energy peak is usually at 10 AM, so we&apos;ve slotted your
+                &quot;Deep Work&quot; task then.
               </p>
             </div>
           </div>
