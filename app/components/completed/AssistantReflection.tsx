@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { TrendingUp, Lightbulb, Sparkles, BrainCircuit } from "lucide-react";
 
 interface Insight {
   id: string;
@@ -14,10 +14,10 @@ interface AssistantReflectionProps {
   onViewDetails?: () => void;
 }
 
-const INSIGHT_ICONS: Record<Insight["type"], { icon: string; color: string }> = {
-  trend: { icon: "trending_up", color: "text-emerald-500" },
-  insight: { icon: "lightbulb", color: "text-primary" },
-  tip: { icon: "tips_and_updates", color: "text-amber-500" },
+const INSIGHT_ICONS: Record<Insight["type"], { icon: React.ReactNode; color: string }> = {
+  trend: { icon: <TrendingUp size={18} />, color: "text-emerald-500" },
+  insight: { icon: <Lightbulb size={18} />, color: "text-primary" },
+  tip: { icon: <Sparkles size={18} />, color: "text-amber-500" },
 };
 
 export function AssistantReflection({ insights, onViewDetails }: AssistantReflectionProps) {
@@ -25,7 +25,7 @@ export function AssistantReflection({ insights, onViewDetails }: AssistantReflec
     <div className="bg-primary/5 p-6 rounded-xl border border-primary/20">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-primary rounded-lg text-white">
-          <MaterialIcon name="psychology" className="text-xl" />
+          <BrainCircuit size={20} />
         </div>
         <h3 className="font-bold text-sm">Assistant Reflection</h3>
       </div>
@@ -35,7 +35,7 @@ export function AssistantReflection({ insights, onViewDetails }: AssistantReflec
           const iconConfig = INSIGHT_ICONS[insight.type];
           return (
             <div key={insight.id} className="flex items-start gap-3">
-              <MaterialIcon name={iconConfig.icon} className={`${iconConfig.color} text-lg`} />
+              <span className={`${iconConfig.color} mt-0.5 shrink-0`}>{iconConfig.icon}</span>
               <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                 <span className="font-bold">{insight.title}:</span> {insight.description}
               </p>

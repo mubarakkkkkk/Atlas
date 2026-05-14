@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { Ellipsis, Inbox, Plus } from "lucide-react";
 import { TaskCard } from "./TaskCard";
 import { Task, Column } from "./types";
 
@@ -18,7 +18,7 @@ export function KanbanColumn({
   onAddTask,
 }: KanbanColumnProps) {
   return (
-    <div className="flex flex-col min-w-[300px] max-w-[300px] bg-primary/5 dark:bg-primary/5 rounded-2xl border border-primary/20 dark:border-primary/10\">
+    <div className="flex flex-col min-w-75 max-w-75 bg-primary/5 dark:bg-primary/5 rounded-2xl border border-primary/20 dark:border-primary/10\">
       {/* Column Header */}
       <div className="p-4 border-b border-primary/20 dark:border-primary/10\">
         <div className="flex items-center justify-between">
@@ -38,11 +38,10 @@ export function KanbanColumn({
               onClick={() => onAddTask?.(column.id)}
               className="p-1 hover:bg-primary/10 dark:hover:bg-primary/10 rounded transition-colors"
             >
-              <MaterialIcon name="add" className="text-foreground/50 text-sm" />
+              <Plus className="text-foreground/50 text-sm" />
             </button>
             <button className="p-1 hover:bg-primary/10 dark:hover:bg-primary/10 rounded transition-colors">
-              <MaterialIcon
-                name="more_horiz"
+              <Ellipsis
                 className="text-foreground/50 text-sm"
               />
             </button>
@@ -55,7 +54,7 @@ export function KanbanColumn({
         {tasks.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-8 text-center">
             <div className="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/10 flex items-center justify-center mb-3">
-              <MaterialIcon name="inbox" className="text-foreground/50" />
+              <Inbox className="text-foreground/50" />
             </div>
             <p className="text-sm text-foreground/50">No tasks yet</p>
             <button
@@ -79,7 +78,7 @@ export function KanbanColumn({
             onClick={() => onAddTask?.(column.id)}
             className="w-full flex items-center justify-center gap-2 py-2 text-sm text-foreground/60 hover:text-primary hover:bg-primary/10 dark:hover:bg-primary/10 rounded-lg transition-colors"
           >
-            <MaterialIcon name="add" className="text-sm" />
+            <Plus className="text-sm" />
             Add Task
           </button>
         </div>

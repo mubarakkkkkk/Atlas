@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleCheck, ArrowRight } from "lucide-react";
 import { TodayTask } from "./types";
 
 interface TaskListProps {
@@ -83,8 +83,7 @@ export function TaskList({
                         : ""}
                   </p>
                 </div>
-                <MaterialIcon
-                  name="chevron_right"
+                <ArrowRight
                   className="text-foreground/50 text-lg"
                 />
               </div>
@@ -103,10 +102,10 @@ export function TaskList({
             {completedTasks.map((task) => (
               <div
                 key={task.id}
-                className="bg-primary/5 dark:bg-primary/5 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4\"
+                className="bg-primary/5 dark:bg-primary/5 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4"
               >
-                <div className="size-5 rounded bg-primary-light flex items-center justify-center text-white shrink-0\">
-                  <MaterialIcon name="check" className="text-xs" />
+                <div className="">
+                  <CircleCheck className="text-xs" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold line-through\">

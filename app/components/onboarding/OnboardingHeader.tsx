@@ -1,4 +1,4 @@
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleX } from "lucide-react";
 import Image from "next/image";
 
 interface OnboardingHeaderProps {
@@ -24,8 +24,7 @@ export function OnboardingHeader({ onClose, showHelp }: OnboardingHeaderProps) {
         onClick={onClose}
         className="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
       >
-        <MaterialIcon
-          name={showHelp ? "help" : "close"}
+        <CircleX
           className="text-slate-700 dark:text-slate-300"
         />
       </button>

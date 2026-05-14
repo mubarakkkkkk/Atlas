@@ -1,6 +1,5 @@
 "use client";
-
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleCheck, CircleEllipsis, ArrowBigRight, Timer } from "lucide-react";
 import { TodayStats as Stats } from "./types";
 
 interface TodayStatsProps {
@@ -20,7 +19,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Tasks Completed
           </span>
-          <MaterialIcon name="check_circle" className="text-primary-light" />
+          <CircleCheck className="text-primary-light" />
         </div>
         <div className="text-2xl font-bold">{stats.tasksCompleted}</div>
         <div className="mt-2 h-1 w-full bg-primary/10 dark:bg-primary/20 rounded-full overflow-hidden">
@@ -37,7 +36,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Tasks Remaining
           </span>
-          <MaterialIcon name="pending" className="text-accent" />
+          <CircleEllipsis className="text-accent" />
         </div>
         <div className="text-2xl font-bold">{stats.tasksRemaining}</div>
         <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-2">
@@ -51,7 +50,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Next Task
           </span>
-          <MaterialIcon name="next_plan" className="text-primary" />
+          <ArrowBigRight className="text-primary" />
         </div>
         <div className="text-xl font-bold truncate">{stats.nextTask}</div>
         <p className="text-xs text-primary mt-2 font-semibold">
@@ -65,7 +64,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Focus Time
           </span>
-          <MaterialIcon name="timer" className="text-primary-dark" />
+          <Timer className="text-primary-dark" />
         </div>
         <div className="text-2xl font-bold">{stats.focusTime}</div>
         <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-2">

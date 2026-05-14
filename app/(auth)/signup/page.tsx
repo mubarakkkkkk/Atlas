@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SignupBranding } from "../../components/auth";
-import { MaterialIcon } from "../../components/ui/MaterialIcon";
 import Image from "next/image";
+import { Mail, User, Eye, EyeOff } from "lucide-react";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -88,8 +88,7 @@ export default function SignUpPage() {
                 Full Name
               </label>
               <div className="relative">
-                <MaterialIcon
-                  name="person"
+                <User
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl"
                 />
                 <input
@@ -109,8 +108,7 @@ export default function SignUpPage() {
                 Work Email
               </label>
               <div className="relative">
-                <MaterialIcon
-                  name="mail"
+                <Mail
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl"
                 />
                 <input
@@ -129,11 +127,7 @@ export default function SignUpPage() {
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
                 Password
               </label>
-              <div className="relative">
-                <MaterialIcon
-                  name="lock"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl"
-                />
+              <div className="relative">                
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -148,7 +142,7 @@ export default function SignUpPage() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors"
                 >
-                  <MaterialIcon name={showPassword ? "visibility_off" : "visibility"} className="text-xl" />
+                  {showPassword ? <Eye /> : <EyeOff />}
                 </button>
               </div>
             </div>

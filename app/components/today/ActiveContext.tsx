@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { Network } from "lucide-react";
 import { ContextInfo } from "./types";
 
 interface ActiveContextProps {
@@ -18,7 +18,7 @@ export function ActiveContext({ context }: ActiveContextProps) {
   return (
     <section className="bg-background-light dark:bg-background-dark/40 rounded-2xl p-6 border border-primary/20 dark:border-primary/10\">
       <h4 className="text-sm font-bold mb-4 flex items-center gap-2">
-        <MaterialIcon name="hub" className="text-purple-500 text-lg" />
+        <Network className="text-purple-500 text-lg" />
         Active Context
       </h4>
       <div className="space-y-3">

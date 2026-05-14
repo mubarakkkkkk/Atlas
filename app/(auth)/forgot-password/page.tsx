@@ -1,4 +1,3 @@
-import React from "react";
 import { ForgotPasswordBranding } from "@/app/components/auth/forgotPasswordBranding";
 import { ArrowLeft, ArrowRight,Mail } from "lucide-react";
 import Link from "next/link";
@@ -12,7 +11,7 @@ const ForgotPasswordPage = () => {
 
       {/* Right panel */}
       <div className="grow md:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-background">
-        <div className="w-full max-w-[448px] space-y-10">
+        <div className="w-full max-w-md space-y-10">
 
           {/* Card */}
           <div
@@ -71,7 +70,7 @@ const ForgotPasswordPage = () => {
             {/* Back link */}
             <div className="pt-4 text-center">
               <Link
-                href="./login"
+                href="./signin"
                 className="text-on-surface-variant hover:text-primary transition-colors text-sm flex items-center justify-center gap-2"
               >
                 <ArrowLeft size={16} />

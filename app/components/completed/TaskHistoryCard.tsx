@@ -1,5 +1,6 @@
 "use client";
 
+import { Check, History, User, Bot } from "lucide-react";
 import { MaterialIcon } from "../ui/MaterialIcon";
 import { CompletedTask } from "./types";
 
@@ -51,12 +52,12 @@ export function TaskHistoryCard({ task }: TaskHistoryCardProps) {
     <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all flex items-center justify-between">
       <div className="flex items-center gap-4">
         <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
-          <MaterialIcon name="check" />
+          <Check />
         </div>
         <div>
           <h4 className="font-semibold text-sm">{task.title}</h4>
           <p className="text-xs text-slate-500 flex items-center gap-2 mt-1">
-            <MaterialIcon name="history" className="text-xs" />
+            <History className="text-xs" />
             {formatTimeAgo(task.completedAt)}
           </p>
         </div>
@@ -70,7 +71,7 @@ export function TaskHistoryCard({ task }: TaskHistoryCardProps) {
           </p>
         </div>
         <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
-          <MaterialIcon name={task.isAIAssisted ? "smart_toy" : "person"} className="text-lg" />
+          {task.isAIAssisted ? <Bot size={20} /> : <User size={20} />}
         </div>
       </div>
     </div>

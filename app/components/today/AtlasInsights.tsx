@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { Bot, Lightbulb, GitBranch } from "lucide-react";
 import { Insight } from "./types";
 
 interface AtlasInsightsProps {
@@ -25,7 +25,7 @@ export function AtlasInsights({
     <section className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/20">
       <div className="flex items-center gap-3 mb-6">
         <div className="size-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30">
-          <MaterialIcon name="smart_toy" />
+          <Bot />
         </div>
         <div>
           <h3 className="text-base font-bold">Atlas Insights</h3>
@@ -38,8 +38,7 @@ export function AtlasInsights({
           const iconConfig = INSIGHT_ICONS[insight.type];
           return (
             <div key={insight.id} className="flex gap-4">
-              <MaterialIcon
-                name={iconConfig.icon}
+              <Lightbulb
                 className={`${iconConfig.color} shrink-0`}
               />
               <div>
@@ -67,7 +66,7 @@ export function AtlasInsights({
           onClick={onReorganize}
           className="w-full py-2.5 bg-primary text-white rounded-xl text-sm font-bold hover:brightness-110 transition-all flex items-center justify-center gap-2"
         >
-          <MaterialIcon name="rebase_edit" className="text-sm" />
+          <GitBranch className="text-sm" />
           Ask Assistant to Reorganize
         </button>
         <button

@@ -1,5 +1,4 @@
-import { MaterialIcon } from "../ui/MaterialIcon";
-
+import { Lightbulb } from "lucide-react";
 const suggestions = [
   {
     title: "Peak Productivity",
@@ -34,7 +33,7 @@ export function AssistantSuggestions() {
   return (
     <div className="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-primary/10 shadow-sm flex flex-col">
       <h3 className="text-base font-semibold mb-6 flex items-center gap-2">
-        <MaterialIcon name="tips_and_updates" className="text-primary" />
+        <Lightbulb className="text-primary" />
         Assistant Suggestions
       </h3>
 

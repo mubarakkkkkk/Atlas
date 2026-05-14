@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { ArrowRight, Bot } from "lucide-react";
 import { OnboardingToggle } from "./OnboardingToggle";
 
 interface AssistantBehaviorData {
@@ -18,7 +18,7 @@ interface AssistantBehaviorStepProps {
 
 export function AssistantBehaviorStep({ data, onChange, onContinue }: AssistantBehaviorStepProps) {
   return (
-    <div className="w-full max-w-[640px] mx-auto">
+    <div className="w-full max-w-160 mx-auto">
       {/* Main Content Card */}
       <div className="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-8 shadow-sm">
         <div className="text-center mb-10">
@@ -69,7 +69,7 @@ export function AssistantBehaviorStep({ data, onChange, onContinue }: AssistantB
             </div>
             <div className="flex items-start gap-3">
               <div className="size-6 bg-primary rounded-full flex items-center justify-center shrink-0">
-                <MaterialIcon name="smart_toy" className="text-[14px] text-white" />
+                <Bot className="text-[14px] text-white" />
               </div>
               <div className="flex flex-col gap-1">
                 <div className="bg-white dark:bg-slate-900 rounded-lg rounded-tl-none px-4 py-2 text-sm text-slate-700 dark:text-slate-300 max-w-[90%] border border-slate-200 dark:border-slate-800">
@@ -88,10 +88,10 @@ export function AssistantBehaviorStep({ data, onChange, onContinue }: AssistantB
           <button
             type="button"
             onClick={onContinue}
-            className="w-full h-12 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+            className="w-full h-12 bg-primary  text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
           >
             <span>Continue</span>
-            <MaterialIcon name="arrow_forward" className="text-lg" />
+            <ArrowRight className="text-lg" />
           </button>
         </div>
       </div>

@@ -1,6 +1,5 @@
 "use client";
-
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { Moon, Sun } from "lucide-react";
 
 export interface AppearanceData {
   theme: "dark" | "light";
@@ -43,7 +42,7 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
                 </div>
               </div>
               <span className="text-sm font-bold flex items-center gap-2">
-                <MaterialIcon name="dark_mode" className="text-[18px]" /> Dark Mode
+                <Moon className="text-[18px]" /> Dark Mode
               </span>
             </button>
             <button
@@ -62,7 +61,7 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
                 </div>
               </div>
               <span className="text-sm font-bold flex items-center gap-2">
-                <MaterialIcon name="light_mode" className="text-[18px]" /> Light Mode
+                <Sun className="text-[18px]" /> Light Mode
               </span>
             </button>
           </div>

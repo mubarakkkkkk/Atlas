@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { MaterialIcon } from "../ui/MaterialIcon";
-import { User } from "lucide-react";
+import { Bot, CirclePlus, CircleX, Clock4, RefreshCcw, Send, User } from "lucide-react";
 
 interface Message {
   role: "assistant" | "user";
@@ -33,7 +31,7 @@ function AssistantMessage({ content, isLoading }: { content: string; isLoading?:
   return (
     <div className="flex gap-4 max-w-2xl">
       <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center text-primary shrink-0">
-        <MaterialIcon name="smart_toy" className="text-lg" />
+        <Bot className="text-lg" />
       </div>
       <div className="space-y-1">
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-1 uppercase tracking-wider">
@@ -43,7 +41,9 @@ function AssistantMessage({ content, isLoading }: { content: string; isLoading?:
           <p className="text-sm leading-relaxed">{content}</p>
           {isLoading && (
             <div className="mt-3 flex items-center gap-2 text-xs text-primary font-medium animate-pulse">
-              <MaterialIcon name="sync" className="text-sm" />
+              <RefreshCcw
+              size={20}
+               className="text-sm" />
               <span>Assistant organizing tasks...</span>
             </div>
           )}
@@ -92,14 +92,14 @@ export function ChatPanel() {
       <div className="absolute bottom-32 left-1/2 -translate-x-1/2 w-full max-w-xs px-4">
         <div className="glass-panel rounded-xl p-3 flex items-center gap-3 shadow-2xl border-primary/20 ring-1 ring-primary/30">
           <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-            <MaterialIcon name="schedule" />
+            <Clock4 />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-xs font-bold text-primary">Floating Reminder</p>
             <p className="text-xs truncate">Review PRs in 10 mins</p>
           </div>
           <button className="p-1 hover:bg-slate-800 rounded transition-colors">
-            <MaterialIcon name="close" className="text-sm text-slate-400" />
+            <CircleX className="text-sm text-slate-400" />
           </button>
         </div>
       </div>
@@ -110,7 +110,7 @@ export function ChatPanel() {
           <div className="absolute -inset-1 bg-linear-to-r from-primary/50 to-primary/0 rounded-xl blur opacity-25 group-focus-within:opacity-50 transition duration-1000" />
           <div className="relative bg-background-dark rounded-xl border border-primary shadow-sm flex items-center gap-2 p-2 pr-3">
             <button className="flex items-center justify-center w-9 h-9 text-slate-400 hover:text-primary transition-colors shrink-0">
-              <MaterialIcon name="add_circle" className="text-xl" />
+              <CirclePlus className="text-xl" />
             </button>
             <textarea
               className="flex-1 bg-transparent border-none focus:ring-0 text-sm resize-none leading-9 placeholder:text-slate-400 outline-none min-h-[36px]"
@@ -118,7 +118,7 @@ export function ChatPanel() {
               rows={1}
             />
             <button className="flex items-center justify-center w-9 h-9 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 shrink-0">
-              <MaterialIcon name="send" className="text-xl" />
+              <Send className="text-xl" />
             </button>
           </div>
         </div>

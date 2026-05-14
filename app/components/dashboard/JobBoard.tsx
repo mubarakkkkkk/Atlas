@@ -116,7 +116,7 @@ function CompletedTaskCard({ title }: { title: string }) {
 export function JobBoard() {
   return (
     <section className="w-80 flex flex-col bg-background-light dark:bg-background-dark overflow-y-auto custom-scrollbar">
-      <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+      <div className="p-6 border-b border-primary flex items-center justify-between">
         <h2 className="font-bold flex items-center gap-2">
           <MaterialIcon name="view_kanban" className="text-primary" />
           Job Board

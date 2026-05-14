@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleX, TriangleAlert } from "lucide-react";
 
 interface ReminderToastProps {
   title: string;
@@ -27,7 +27,7 @@ export function ReminderToast({
     <div className="fixed bottom-6 right-6 z-50 animate-pulse">
       <div className="bg-primary text-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border border-primary-dark min-w-[320px]\">
         <div className="size-10 bg-primary/20 rounded-lg flex items-center justify-center text-primary">
-          <MaterialIcon name="notification_important" />
+          <TriangleAlert />
         </div>
         <div className="flex-1">
           <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-0.5">
@@ -39,7 +39,7 @@ export function ReminderToast({
           onClick={handleDismiss}
           className="text-white/70 hover:text-white transition-colors\"
         >
-          <MaterialIcon name="close" />
+          <CircleX />
         </button>
       </div>
     </div>

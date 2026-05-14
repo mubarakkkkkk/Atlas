@@ -1,7 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { MaterialIcon } from "../ui/MaterialIcon";
+import {
+  Flag,
+  AlertTriangle,
+  Clock,
+  MessageCircle,
+  Paperclip,
+  LucideIcon,
+  CircleX,
+} from "lucide-react";
+
 import { Task, PRIORITY_CONFIG, LABEL_CONFIG } from "./types";
 
 interface TaskCardProps {
@@ -15,6 +24,9 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
   const isInProgress = task.status === "in_progress";
   const isCompleted = task.status === "completed";
 
+  const PriorityIcon: LucideIcon =
+    task.priority === "urgent" ? AlertTriangle : Flag;
+
   return (
     <div
       onClick={() => onClick?.(task)}
@@ -23,10 +35,10 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
         ${isDragging ? "shadow-2xl scale-105 rotate-2" : ""}
         ${
           isCompleted
-            ? "bg-background-light/50 dark:bg-background-dark/20 border-primary/20 dark:border-primary/10 opacity-70"
+            ? "bg-background-light/50 dark:bg-background-dark/20 border-primary/20 opacity-70"
             : isInProgress
-              ? "bg-primary/5 border-primary/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
-              : "bg-background-light dark:bg-background-dark/40 border-primary/20 dark:border-primary/10 hover:border-primary/40 hover:shadow-md"
+            ? "bg-primary/5 border-primary/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
+            : "bg-background-light dark:bg-background-dark/40 border-primary/20 hover:border-primary/40 hover:shadow-md"
         }
       `}
     >
@@ -37,25 +49,23 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
       {/* Header */}
       <div className="flex items-start justify-between gap-2 mb-2">
         <h3
-          className={`text-sm font-semibold leading-tight ${
+          className={`text-sm font-semibold leading-tight transition-colors ${
             isCompleted
               ? "text-foreground/50 line-through"
-              : "text-foreground dark:text-foreground group-hover:text-primary"
-          } transition-colors`}
+              : "group-hover:text-primary"
+          }`}
         >
           {task.title}
         </h3>
+
         {isCompleted && (
-          <MaterialIcon
-            name="check_circle"
-            className="text-primary-light text-base shrink-0"
-          />
+          <CircleX className="w-4 h-4 text-primary-light shrink-0" />
         )}
       </div>
 
       {/* Description */}
       {task.description && !isCompleted && (
-        <p className="text-xs text-foreground/60 dark:text-foreground/70 line-clamp-2 mb-3">
+        <p className="text-xs text-foreground/60 line-clamp-2 mb-3">
           {task.description}
         </p>
       )}
@@ -65,10 +75,11 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
         <div className="flex flex-wrap gap-1.5 mb-3">
           {task.labels.map((label) => {
             const config = LABEL_CONFIG[label];
+
             return (
               <span
                 key={label}
-                className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tight ${config.color} ${config.bgColor}`}
+                className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase ${config.color} ${config.bgColor}`}
               >
                 {config.label}
               </span>
@@ -77,15 +88,18 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
         </div>
       )}
 
-      {/* Progress bar for in-progress tasks */}
+      {/* Progress */}
       {isInProgress && task.progress !== undefined && (
         <div className="mb-3">
           <div className="flex items-center justify-between mb-1">
-            <span className="text-[10px] text-foreground/60">Progress</span>
+            <span className="text-[10px] text-foreground/60">
+              Progress
+            </span>
             <span className="text-[10px] font-bold text-primary">
               {task.progress}%
             </span>
           </div>
+
           <div className="w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
             <div
               className="bg-primary h-full rounded-full transition-all duration-500"
@@ -97,23 +111,18 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
 
       {/* Footer */}
       {!isCompleted && (
-        <div className="flex items-center justify-between pt-2 border-t border-primary/10 dark:border-primary/10">
+        <div className="flex items-center justify-between pt-2 border-t border-primary/10">
           <div className="flex items-center gap-3">
             {/* Priority */}
-            <span
-              className={`flex items-center gap-1 text-[10px] font-semibold ${priorityConfig.color}`}
-            >
-              <MaterialIcon
-                name={task.priority === "urgent" ? "priority_high" : "flag"}
-                className="text-xs"
-              />
+            <span className={`flex items-center gap-1 text-[10px] font-semibold ${priorityConfig.color}`}>
+              <PriorityIcon className="w-3.5 h-3.5" />
               {priorityConfig.label}
             </span>
 
-            {/* Due date */}
+            {/* Due time */}
             {task.dueTime && (
               <span className="flex items-center gap-1 text-[10px] text-foreground/50">
-                <MaterialIcon name="schedule" className="text-xs" />
+                <Clock className="w-3.5 h-3.5" />
                 {task.dueTime}
               </span>
             )}
@@ -122,16 +131,16 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
           <div className="flex items-center gap-2">
             {/* Comments */}
             {task.comments && task.comments > 0 && (
-              <span className="flex items-center gap-0.5 text-[10px] text-foreground/50">
-                <MaterialIcon name="chat_bubble" className="text-xs" />
+              <span className="flex items-center gap-1 text-[10px] text-foreground/50">
+                <MessageCircle className="w-3.5 h-3.5" />
                 {task.comments}
               </span>
             )}
 
             {/* Attachments */}
             {task.attachments && task.attachments > 0 && (
-              <span className="flex items-center gap-0.5 text-[10px] text-foreground/50">
-                <MaterialIcon name="attach_file" className="text-xs" />
+              <span className="flex items-center gap-1 text-[10px] text-foreground/50">
+                <Paperclip className="w-3.5 h-3.5" />
                 {task.attachments}
               </span>
             )}
@@ -142,7 +151,7 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
                 {task.assignees.slice(0, 3).map((avatar, index) => (
                   <div
                     key={index}
-                    className="w-5 h-5 rounded-full border-2 border-background-light dark:border-background-dark bg-primary/30 overflow-hidden"
+                    className="w-5 h-5 rounded-full border-2 border-background-light dark:border-background-dark overflow-hidden"
                   >
                     <Image
                       src={avatar}
@@ -153,8 +162,9 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
                     />
                   </div>
                 ))}
+
                 {task.assignees.length > 3 && (
-                  <div className="w-5 h-5 rounded-full border-2 border-background-light dark:border-background-dark bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full border-2 border-background-light dark:border-background-dark bg-primary/10 flex items-center justify-center">
                     <span className="text-[8px] font-bold text-foreground/60">
                       +{task.assignees.length - 3}
                     </span>

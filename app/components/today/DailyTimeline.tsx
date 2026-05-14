@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { Clock4 } from "lucide-react";
 import { TimelineEvent, PRIORITY_CONFIG, CATEGORY_CONFIG } from "./types";
 
 interface DailyTimelineProps {
@@ -11,7 +11,7 @@ export function DailyTimeline({ events }: DailyTimelineProps) {
   return (
     <section>
       <h3 className="text-base font-bold mb-4 flex items-center gap-2">
-        <MaterialIcon name="schedule" className="text-lg" />
+        <Clock4 className="text-lg" />
         Daily Timeline
       </h3>
       <div className="bg-background-light dark:bg-background-dark/20 rounded-xl p-6 border border-primary/20 dark:border-primary/10\">

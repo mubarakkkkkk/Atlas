@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { List, Plus, Search, SquareKanban } from "lucide-react";
 import {
   TaskPriority,
   TaskLabel,
@@ -33,8 +33,8 @@ export function BoardFilters({
     <div className="flex items-center justify-between gap-4 flex-wrap">
       {/* Search */}
       <div className="relative flex-1 max-w-sm">
-        <MaterialIcon
-          name="search"
+        <Search
+        size={20}
           className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
         />
         <input
@@ -87,7 +87,7 @@ export function BoardFilters({
                 : "text-slate-400 hover:text-slate-600"
             }`}
           >
-            <MaterialIcon name="view_kanban" className="text-lg" />
+            <SquareKanban className="text-lg" />
           </button>
           <button
             onClick={() => onViewChange("list")}
@@ -97,13 +97,13 @@ export function BoardFilters({
                 : "text-slate-400 hover:text-slate-600"
             }`}
           >
-            <MaterialIcon name="view_list" className="text-lg" />
+            <List className="text-lg" />
           </button>
         </div>
 
         {/* Add Task Button */}
         <button className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">
-          <MaterialIcon name="add" className="text-lg" />
+          <Plus className="text-lg" />
           New Task
         </button>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleCheck, Lightbulb, ListCheck, SlidersHorizontal } from "lucide-react";
+
 
 interface OnboardingCompleteStepProps {
   preferences: {
@@ -50,11 +51,11 @@ export function OnboardingCompleteStep({
   onEditPreferences,
 }: OnboardingCompleteStepProps) {
   return (
-    <div className="w-full max-w-[600px] mx-auto flex flex-col">
+    <div className="w-full max-w-150 mx-auto flex flex-col">
       {/* Success Header */}
       <div className="flex flex-col items-center text-center mb-8">
         <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <MaterialIcon name="check_circle" className="text-5xl" />
+          <CircleCheck className="text-5xl" />
         </div>
         <h1 className="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight mb-3">
           You&apos;re all set!
@@ -68,7 +69,7 @@ export function OnboardingCompleteStep({
         {/* Summary Card */}
         <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 shadow-sm">
           <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-4 flex items-center gap-2">
-            <MaterialIcon name="tune" className="text-primary text-xl" />
+            <SlidersHorizontal className="text-primary text-xl" />
             Summary of Preferences
           </h3>
           <div className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -96,7 +97,7 @@ export function OnboardingCompleteStep({
         {/* Tasks Card */}
         <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 shadow-sm">
           <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight mb-4 flex items-center gap-2">
-            <MaterialIcon name="event_note" className="text-primary text-xl" />
+            <ListCheck className="text-primary text-xl" />
             Today&apos;s Tasks
           </h3>
           <div className="space-y-3">
@@ -128,7 +129,7 @@ export function OnboardingCompleteStep({
         <div className="rounded-xl bg-linear-to-r from-primary/20 to-primary/5 border border-primary/20 p-5">
           <div className="flex items-start gap-4">
             <div className="p-2 rounded-lg bg-primary text-white">
-              <MaterialIcon name="lightbulb" />
+              <Lightbulb />
             </div>
             <div>
               <p className="text-slate-900 dark:text-white font-semibold text-sm mb-1">

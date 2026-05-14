@@ -1,5 +1,4 @@
-import { MaterialIcon } from "../ui/MaterialIcon";
-import { User } from "lucide-react";
+import { User, Search, Bell, Zap } from "lucide-react";
 
 interface HeaderProps {
   searchPlaceholder?: string;
@@ -13,12 +12,12 @@ export function Header({
   actionIcon = "calendar_today",
 }: HeaderProps) {
   return (
-    <header className="h-16 border-b border-primary/20 dark:border-primary/10 bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+    <header className="h-16 border-b border-primary bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
       <div className="flex items-center flex-1 max-w-md">
         <div className="relative w-full">
-          <MaterialIcon
-            name="search"
+          <Search
             className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/50"
+            size={20}
           />
           <input
             type="text"
@@ -30,11 +29,11 @@ export function Header({
 
       <div className="flex items-center gap-4">
         <button className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2">
-          <MaterialIcon name={actionIcon} className="text-sm" />
+          <Zap className="text-sm" />
           {actionLabel}
         </button>
         <button className="p-2 text-foreground/60 dark:text-foreground/60 hover:bg-primary/10 dark:hover:bg-primary/10 rounded-lg relative">
-          <MaterialIcon name="notifications" />
+          <Bell />
           <span className="absolute top-2 right-2.5 size-2 bg-primary-dark border-2 border-background-light dark:border-background-dark rounded-full" />
         </button>
         <button className="p-2 text-foreground/60 dark:text-foreground/60 hover:bg-primary/10 dark:hover:bg-primary/10 rounded-lg relative">

@@ -1,6 +1,6 @@
 "use client";
 
-import { MaterialIcon } from "../ui/MaterialIcon";
+import { ArrowRight, Clock4, Sprout, Timer } from "lucide-react";
 
 interface WorkSetupData {
   startTime: string;
@@ -33,7 +33,7 @@ export function WorkSetupStep({ data, onChange, onContinue }: WorkSetupStepProps
   };
 
   return (
-    <div className="w-full max-w-[560px] mx-auto">
+    <div className="w-full max-w-140 mx-auto">
       {/* Intro Section */}
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold mb-3">Set up your work style</h1>
@@ -47,7 +47,7 @@ export function WorkSetupStep({ data, onChange, onContinue }: WorkSetupStepProps
         {/* Work Hours Section */}
         <section>
           <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-            <MaterialIcon name="schedule" className="text-primary" />
+            <Clock4 className="text-primary" />
             Work Hours
           </h3>
           <div className="grid grid-cols-2 gap-4">
@@ -75,7 +75,7 @@ export function WorkSetupStep({ data, onChange, onContinue }: WorkSetupStepProps
         {/* Focus Hours Section */}
         <section>
           <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-            <MaterialIcon name="potted_plant" className="text-primary" />
+            <Sprout className="text-primary" />
             Focus Hours
           </h3>
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
@@ -105,7 +105,7 @@ export function WorkSetupStep({ data, onChange, onContinue }: WorkSetupStepProps
         {/* Default Task Duration */}
         <section>
           <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-            <MaterialIcon name="timer" className="text-primary" />
+            <Timer className="text-primary" />
             Default Task Duration
           </h3>
           <div className="flex p-1 bg-slate-200 dark:bg-slate-800 rounded-xl">
@@ -171,7 +171,7 @@ export function WorkSetupStep({ data, onChange, onContinue }: WorkSetupStepProps
             className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group"
           >
             Continue
-            <MaterialIcon name="arrow_forward" className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="transition-transform group-hover:translate-x-1" />
           </button>
         </div>
       </div>

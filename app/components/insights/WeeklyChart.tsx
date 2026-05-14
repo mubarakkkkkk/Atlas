@@ -15,6 +15,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { MaterialIcon } from "../ui/MaterialIcon";
+import { CircleCheck, Percent, TrendingUp, Trophy } from "lucide-react";
 
 ChartJS.register(
   CategoryScale,
@@ -237,7 +238,7 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <MaterialIcon name="percent" className="text-primary text-sm" />
+                <Percent className="text-primary text-sm" />
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">
@@ -252,8 +253,7 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                <MaterialIcon
-                  name="emoji_events"
+                <Trophy
                   className="text-emerald-500 text-sm"
                 />
               </div>
@@ -270,8 +270,7 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                <MaterialIcon
-                  name="task_alt"
+                <CircleCheck
                   className="text-amber-500 text-sm"
                 />
               </div>
@@ -309,7 +308,7 @@ export function WeeklyChart() {
             </span>
           </div>
           <div className="flex items-center gap-1.5 text-emerald-500">
-            <MaterialIcon name="trending_up" className="text-sm" />
+            <TrendingUp className="text-sm" />
             <span className="text-xs font-semibold">+12% vs last week</span>
           </div>
         </div>
