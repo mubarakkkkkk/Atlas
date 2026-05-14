@@ -19,18 +19,26 @@ const reminderOptions = [
   { value: "urgent-only", label: "Minimalist (Urgent only)" },
 ];
 
-export function WorkPreferencesSection({ data, onChange }: WorkPreferencesSectionProps) {
-  const handleChange = (field: keyof WorkPreferencesData, value: string | number) => {
+export function WorkPreferencesSection({
+  data,
+  onChange,
+}: WorkPreferencesSectionProps) {
+  const handleChange = (
+    field: keyof WorkPreferencesData,
+    value: string | number,
+  ) => {
     onChange({ ...data, [field]: value });
   };
 
   return (
     <section
       id="preferences"
-      className="bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm"
+      className="bg-background-dark rounded-xl border border-border overflow-hidden shadow-sm"
     >
       <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-        <h3 className="font-bold text-slate-900 dark:text-slate-100">Work Preferences</h3>
+        <h3 className="font-bold text-slate-900 dark:text-slate-100">
+          Work Preferences
+        </h3>
       </div>
       <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div className="space-y-4">
@@ -60,7 +68,9 @@ export function WorkPreferencesSection({ data, onChange }: WorkPreferencesSectio
             </label>
             <select
               value={data.reminderFrequency}
-              onChange={(e) => handleChange("reminderFrequency", e.target.value)}
+              onChange={(e) =>
+                handleChange("reminderFrequency", e.target.value)
+              }
               className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
             >
               {reminderOptions.map((option) => (
@@ -82,7 +92,9 @@ export function WorkPreferencesSection({ data, onChange }: WorkPreferencesSectio
                 min="1"
                 max="8"
                 value={data.focusHoursGoal}
-                onChange={(e) => handleChange("focusHoursGoal", parseInt(e.target.value))}
+                onChange={(e) =>
+                  handleChange("focusHoursGoal", parseInt(e.target.value))
+                }
                 className="flex-1 accent-primary"
               />
               <span className="text-sm font-bold w-12 text-center text-primary">

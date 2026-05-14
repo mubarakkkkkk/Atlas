@@ -17,15 +17,11 @@ export function StatCard({
 
   const TrendIcon = isPositive ? TrendingUp : TrendingDown;
 
-  const trendColor = isPositive
-    ? "text-emerald-500"
-    : "text-rose-500";
+  const trendColor = isPositive ? "text-emerald-500" : "text-rose-500";
 
   return (
-    <div className="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-primary/10 shadow-sm">
-      <p className="text-sm text-slate-500 dark:text-slate-400">
-        {label}
-      </p>
+    <div className="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-border/10 shadow-sm">
+      <p className="text-sm text-slate-500 dark:text-slate-400">{label}</p>
 
       <div className="flex items-end justify-between mt-2">
         <h3 className="text-3xl font-bold">{value}</h3>

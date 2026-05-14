@@ -114,8 +114,8 @@ export function WorkSetupStep({
                   onClick={() => toggleFocusHour(hour)}
                   className={`py-2 text-xs font-medium rounded-lg transition-colors ${
                     isSelected
-                      ? "border-2 border-primary bg-primary/10 text-primary"
-                      : "border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hover:border-primary"
+                      ? "border-2 border-border bg-primary/10 text-primary"
+                      : "border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hover:border-border"
                   }`}
                 >
                   {hour}

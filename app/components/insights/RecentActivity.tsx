@@ -1,8 +1,4 @@
-import {
-  Sparkles,
-  User,
-  LucideIcon,
-} from "lucide-react";
+import { Sparkles, User, LucideIcon } from "lucide-react";
 
 const activities: {
   icon: LucideIcon;
@@ -22,9 +18,7 @@ const activities: {
     title: (
       <>
         You completed{" "}
-        <span className="text-primary">
-          #FIX-104 Authentication Layer
-        </span>
+        <span className="text-primary">#FIX-104 Authentication Layer</span>
       </>
     ),
     time: "1 hour ago",
@@ -40,8 +34,7 @@ const activities: {
     isAtlas: false,
     title: (
       <>
-        You added a new task to{" "}
-        <span className="text-primary">Job Board</span>
+        You added a new task to <span className="text-primary">Job Board</span>
       </>
     ),
     time: "Yesterday",
@@ -50,10 +43,8 @@ const activities: {
 
 export function RecentActivity() {
   return (
-    <div className="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-primary/10 shadow-sm">
-      <h3 className="text-base font-semibold mb-6">
-        Recent Activity
-      </h3>
+    <div className="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-border/10 shadow-sm">
+      <h3 className="text-base font-semibold mb-6">Recent Activity</h3>
 
       <div className="space-y-6 relative before:absolute before:left-3.5 before:top-2 before:bottom-2 before:w-px before:bg-slate-200 dark:before:bg-primary/10">
         {activities.map((activity, index) => {
@@ -72,9 +63,7 @@ export function RecentActivity() {
               </div>
 
               <div className="flex-1">
-                <p className="text-sm font-medium">
-                  {activity.title}
-                </p>
+                <p className="text-sm font-medium">{activity.title}</p>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">
                   {activity.time}
                 </p>

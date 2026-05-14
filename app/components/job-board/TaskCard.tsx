@@ -35,10 +35,10 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
         ${isDragging ? "shadow-2xl scale-105 rotate-2" : ""}
         ${
           isCompleted
-            ? "bg-background-light/50 dark:bg-background-dark/20 border-primary/20 opacity-70"
+            ? "bg-background-light/50 dark:bg-background-dark/20 border-border/20 opacity-70"
             : isInProgress
-            ? "bg-primary/5 border-primary/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
-            : "bg-background-light dark:bg-background-dark/40 border-primary/20 hover:border-primary/40 hover:shadow-md"
+              ? "bg-primary/5 border-border/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
+              : "bg-background-light dark:bg-background-dark/40 border-border/20 hover:border-border/40 hover:shadow-md"
         }
       `}
     >
@@ -92,9 +92,7 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
       {isInProgress && task.progress !== undefined && (
         <div className="mb-3">
           <div className="flex items-center justify-between mb-1">
-            <span className="text-[10px] text-foreground/60">
-              Progress
-            </span>
+            <span className="text-[10px] text-foreground/60">Progress</span>
             <span className="text-[10px] font-bold text-primary">
               {task.progress}%
             </span>
@@ -111,10 +109,12 @@ export function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
 
       {/* Footer */}
       {!isCompleted && (
-        <div className="flex items-center justify-between pt-2 border-t border-primary/10">
+        <div className="flex items-center justify-between pt-2 border-t border-border/10">
           <div className="flex items-center gap-3">
             {/* Priority */}
-            <span className={`flex items-center gap-1 text-[10px] font-semibold ${priorityConfig.color}`}>
+            <span
+              className={`flex items-center gap-1 text-[10px] font-semibold ${priorityConfig.color}`}
+            >
               <PriorityIcon className="w-3.5 h-3.5" />
               {priorityConfig.label}
             </span>

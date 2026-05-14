@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen w-full bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 flex flex-col">
       {/* ── HEADER ─────────────────────────────────────────── */}
-      <header className="flex items-center justify-between border-b border-primary/20 dark:border-primary/10 px-6 md:px-10 py-5 shrink-0">
+      <header className="flex items-center justify-between border-b border-border/20 dark:border-border/10 px-6 md:px-10 py-5 shrink-0">
         <div className="flex items-center gap-3">
           <Image
             src="/images/cropedNoBg.png"
@@ -67,8 +67,8 @@ const HomePage = () => {
                 {/* Centre orb */}
                 <div className="flex flex-col items-center gap-4 relative z-10">
                   <div className="relative h-48 w-48 flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-[spin_20s_linear_infinite]" />
-                    <div className="absolute inset-4 rounded-full border border-primary/40" />
+                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-border/30 animate-[spin_20s_linear_infinite]" />
+                    <div className="absolute inset-4 rounded-full border border-border/40" />
                     <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary shadow-[0_0_50px_rgba(16,185,129,0.55)] text-white">
                       <BsGearWideConnected size={40} />
                     </div>
@@ -85,10 +85,10 @@ const HomePage = () => {
 
             {/* Badges below graphic */}
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
-              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+              <span className="rounded-full border border-border/20 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
                 Neural Engine Active
               </span>
-              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+              <span className="rounded-full border border-border/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
                 V 2.0.4-Beta
               </span>
             </div>
@@ -97,7 +97,7 @@ const HomePage = () => {
           {/* RIGHT — Copy & CTA */}
           <div className="flex flex-col gap-8 order-1 lg:order-2">
             {/* Step pill */}
-            <span className="w-fit rounded-full border border-primary/20 dark:border-primary/10 bg-primary/5 dark:bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary dark:text-primary-light">
+            <span className="w-fit rounded-full border border-border/20 dark:border-border/10 bg-primary/5 dark:bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary dark:text-primary-light">
               Step 1 of 4
             </span>
 
@@ -124,14 +124,14 @@ const HomePage = () => {
                 </button>
               </Link>
               <Link href="/signin">
-                <button className="flex h-14 items-center justify-center gap-2 rounded-xl border border-primary/20 dark:border-primary/10 bg-primary/5 dark:bg-primary/10 px-8 text-base font-bold text-foreground dark:text-foreground transition-all hover:bg-primary/10 dark:hover:bg-primary/20">
+                <button className="flex h-14 items-center justify-center gap-2 rounded-xl border border-border/20 dark:border-border/10 bg-primary/5 dark:bg-primary/10 px-8 text-base font-bold text-foreground dark:text-foreground transition-all hover:bg-primary/10 dark:hover:bg-primary/20">
                   I&apos;ve used Atlas before
                 </button>
               </Link>
             </div>
 
             {/* Social proof */}
-            <div className="pt-8 border-t border-primary/20 dark:border-primary/10">
+            <div className="pt-8 border-t border-border/20 dark:border-border/10">
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-3">
                   {[
@@ -166,7 +166,7 @@ const HomePage = () => {
       </main>
 
       {/* ── FOOTER ─────────────────────────────────────────── */}
-      <footer className="shrink-0 border-t border-primary/20 dark:border-primary/10 px-6 md:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-foreground/60 text-xs uppercase tracking-widest">
+      <footer className="shrink-0 border-t border-border/20 dark:border-border/10 px-6 md:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-foreground/60 text-xs uppercase tracking-widest">
         <div className="flex gap-6">
           <Link href="#" className="transition-colors hover:text-primary">
             Privacy Policy

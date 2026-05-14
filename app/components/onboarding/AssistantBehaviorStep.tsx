@@ -74,7 +74,7 @@ export function AssistantBehaviorStep({
           </p>
           <div className="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col gap-4">
             <div className="flex flex-col items-end gap-1">
-              <div className="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-lg rounded-tr-none px-4 py-2 text-sm max-w-[80%] border border-primary/20">
+              <div className="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-lg rounded-tr-none px-4 py-2 text-sm max-w-[80%] border border-border/20">
                 I need to fix a bug and deploy by 5
               </div>
               <span className="text-[10px] text-slate-500 font-medium">

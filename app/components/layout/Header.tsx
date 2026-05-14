@@ -12,7 +12,7 @@ export function Header({
   actionIcon = "calendar_today",
 }: HeaderProps) {
   return (
-    <header className="h-16 border-b border-primary bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+    <header className="h-16 border-b border-border bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
       <div className="flex items-center flex-1 max-w-md">
         <div className="relative w-full">
           <Search

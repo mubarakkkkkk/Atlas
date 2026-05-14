@@ -41,7 +41,7 @@ const completedTasks = ["Morning standup", "Email triage"];
 
 function PendingTaskCard({ task }: { task: Task }) {
   return (
-    <div className="bg-white dark:bg-slate-800/40 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/40 transition-all cursor-pointer group">
+    <div className="bg-white dark:bg-slate-800/40 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-border/40 transition-all cursor-pointer group">
       <div className="flex items-start justify-between mb-2">
         <h3 className="text-sm font-semibold group-hover:text-primary transition-colors">
           {task.title}
@@ -84,7 +84,7 @@ function PendingTaskCard({ task }: { task: Task }) {
 
 function InProgressTaskCard({ task }: { task: Task }) {
   return (
-    <div className="bg-primary/5 p-3 rounded-xl border border-primary/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5 cursor-pointer relative overflow-hidden group">
+    <div className="bg-primary/5 p-3 rounded-xl border border-border/20 ring-1 ring-primary/20 shadow-lg shadow-primary/5 cursor-pointer relative overflow-hidden group">
       <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
       <div className="flex items-start justify-between mb-2">
         <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
@@ -96,7 +96,10 @@ function InProgressTaskCard({ task }: { task: Task }) {
         {task.description}
       </p>
       <div className="w-full bg-primary/10 h-1 rounded-full overflow-hidden">
-        <div className="bg-primary h-full" style={{ width: `${task.progress}%` }} />
+        <div
+          className="bg-primary h-full"
+          style={{ width: `${task.progress}%` }}
+        />
       </div>
     </div>
   );
@@ -116,7 +119,7 @@ function CompletedTaskCard({ title }: { title: string }) {
 export function JobBoard() {
   return (
     <section className="w-80 flex flex-col bg-background-light dark:bg-background-dark overflow-y-auto custom-scrollbar">
-      <div className="p-6 border-b border-primary flex items-center justify-between">
+      <div className="p-6 border-b border-border flex items-center justify-between">
         <h2 className="font-bold flex items-center gap-2">
           <KanbanSquare className="text-primary" />
           Job Board

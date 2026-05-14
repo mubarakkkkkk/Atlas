@@ -116,7 +116,7 @@ export function OnboardingCompleteStep({
                 key={task.id}
                 className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40"
               >
-                <div className="h-5 w-5 rounded border-2 border-primary/40 flex-shrink-0" />
+                <div className="h-5 w-5 rounded border-2 border-border/40 flex-shrink-0" />
                 <div className="flex-1">
                   <p className="text-sm font-medium text-slate-900 dark:text-white">
                     {task.title}
@@ -138,7 +138,7 @@ export function OnboardingCompleteStep({
         </div>
 
         {/* Insight Card */}
-        <div className="rounded-xl bg-linear-to-r from-primary/20 to-primary/5 border border-primary/20 p-5">
+        <div className="rounded-xl bg-linear-to-r from-primary/20 to-primary/5 border border-border/20 p-5">
           <div className="flex items-start gap-4">
             <div className="p-2 rounded-lg bg-primary text-white">
               <Lightbulb />

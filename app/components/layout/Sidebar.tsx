@@ -34,11 +34,11 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 flex flex-col border-r border-primary bg-background-light dark:bg-background-dark/50 shrink-0">
+    <aside className="w-64 flex flex-col border-r border-border bg-background-light dark:bg-background-dark/50 shrink-0">
       {/* Logo */}
       <div className="p-2">
         <Image
-          src="/images/newLogo.png"
+          src="/images/noBg.png"
           alt="Atlas Logo"
           width={150}
           height={50}
@@ -46,8 +46,8 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <div className="p-6">
-        <nav className="space-y-1">
+      <div className="p-6 flex flex-col gap-5 h-full">
+        <nav className="space-y-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             const Icon = item.icon;
@@ -71,7 +71,7 @@ export function Sidebar() {
       </div>
 
       {/* Bottom Widget */}
-      <div className="mt-auto p-4 border-t border-primary/20">
+      <div className="mt-auto p-4 border-t border-border/20">
         <div className="bg-primary/5 rounded-xl p-4 flex flex-col gap-3">
           <div className="flex items-start gap-2">
             <div className="size-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
@@ -86,7 +86,7 @@ export function Sidebar() {
           <div className="relative">
             <input
               type="text"
-              className="w-full bg-background-light dark:bg-background-dark border border-primary/20 rounded-lg py-1.5 pl-3 pr-8 text-xs focus:ring-1 focus:ring-primary focus:outline-none"
+              className="w-full bg-background-light dark:bg-background-dark border border-border/20 rounded-lg py-1.5 pl-3 pr-8 text-xs focus:ring-1 focus:ring-primary focus:outline-none"
               placeholder="Ask Atlas..."
             />
 

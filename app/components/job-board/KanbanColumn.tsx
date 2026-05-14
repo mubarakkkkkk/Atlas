@@ -18,9 +18,9 @@ export function KanbanColumn({
   onAddTask,
 }: KanbanColumnProps) {
   return (
-    <div className="flex flex-col min-w-75 max-w-75 bg-primary/5 dark:bg-primary/5 rounded-2xl border border-primary/20 dark:border-primary/10\">
+    <div className="flex flex-col min-w-75 max-w-75 bg-primary/5 dark:bg-primary/5 rounded-2xl border border-border/20 dark:border-border/10\">
       {/* Column Header */}
-      <div className="p-4 border-b border-primary/20 dark:border-primary/10\">
+      <div className="p-4 border-b border-border/20 dark:border-border/10\">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className={`w-2 h-2 rounded-full ${column.bgColor}`} />
@@ -41,9 +41,7 @@ export function KanbanColumn({
               <Plus className="text-foreground/50 text-sm" />
             </button>
             <button className="p-1 hover:bg-primary/10 dark:hover:bg-primary/10 rounded transition-colors">
-              <Ellipsis
-                className="text-foreground/50 text-sm"
-              />
+              <Ellipsis className="text-foreground/50 text-sm" />
             </button>
           </div>
         </div>
@@ -73,7 +71,7 @@ export function KanbanColumn({
 
       {/* Add Task Button */}
       {tasks.length > 0 && (
-        <div className="p-3 border-t border-primary/20 dark:border-primary/10">
+        <div className="p-3 border-t border-border/20 dark:border-border/10">
           <button
             onClick={() => onAddTask?.(column.id)}
             className="w-full flex items-center justify-center gap-2 py-2 text-sm text-foreground/60 hover:text-primary hover:bg-primary/10 dark:hover:bg-primary/10 rounded-lg transition-colors"

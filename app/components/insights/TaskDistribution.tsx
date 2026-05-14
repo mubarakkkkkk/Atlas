@@ -7,7 +7,7 @@ const distributionData = [
 
 export function TaskDistribution() {
   return (
-    <div className="bg-background-light dark:bg-primary/5 p-6 rounded-xl border border-primary/20 dark:border-primary/10 shadow-sm">
+    <div className="bg-background-light dark:bg-primary/5 p-6 rounded-xl border border-border/20 dark:border-border/10 shadow-sm">
       <h3 className="text-base font-semibold mb-6">Task Distribution</h3>
 
       <div className="space-y-5">
@@ -27,7 +27,7 @@ export function TaskDistribution() {
         ))}
       </div>
 
-      <div className="mt-8 pt-4 border-t border-primary/20 dark:border-primary/10">
+      <div className="mt-8 pt-4 border-t border-border/20 dark:border-border/10">
         <p className="text-[11px] text-foreground/60 dark:text-foreground/70 italic">
           &quot;You spent 4 hours more on Development this week compared to
           last.&quot;

@@ -16,7 +16,7 @@ export function ActiveContext({ context }: ActiveContextProps) {
         : "text-amber-500";
 
   return (
-    <section className="bg-background-light dark:bg-background-dark/40 rounded-2xl p-6 border border-primary/20 dark:border-primary/10\">
+    <section className="bg-background-light dark:bg-background-dark/40 rounded-2xl p-6 border border-border/20 dark:border-border/10\">
       <h4 className="text-sm font-bold mb-4 flex items-center gap-2">
         <Network className="text-purple-500 text-lg" />
         Active Context

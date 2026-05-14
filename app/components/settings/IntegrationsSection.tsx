@@ -74,7 +74,9 @@ function IntegrationIcon({ icon }: { icon: Integration["icon"] }) {
   const { component, bg } = iconMap[icon];
 
   return (
-    <div className={`w-10 h-10 rounded-lg ${bg} flex items-center justify-center`}>
+    <div
+      className={`w-10 h-10 rounded-lg ${bg} flex items-center justify-center`}
+    >
       {component}
     </div>
   );
@@ -88,10 +90,12 @@ export function IntegrationsSection({
   return (
     <section
       id="integrations"
-      className="bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm"
+      className="bg-background-dark rounded-xl border border-border overflow-hidden shadow-sm"
     >
       <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-        <h3 className="font-bold text-slate-900 dark:text-slate-100">Integrations</h3>
+        <h3 className="font-bold text-slate-900 dark:text-slate-100">
+          Integrations
+        </h3>
       </div>
       <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         {integrations.map((integration) => (
@@ -109,7 +113,9 @@ export function IntegrationsSection({
                     Connected
                   </p>
                 ) : (
-                  <p className="text-xs text-slate-500 font-medium">Not connected</p>
+                  <p className="text-xs text-slate-500 font-medium">
+                    Not connected
+                  </p>
                 )}
               </div>
             </div>

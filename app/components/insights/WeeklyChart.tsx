@@ -203,7 +203,7 @@ export function WeeklyChart() {
   };
 
   return (
-    <div className="lg:col-span-2 bg-background-light dark:bg-background-dark/50 rounded-2xl border border-primary/20 dark:border-primary/10 shadow-sm overflow-hidden\">
+    <div className="lg:col-span-2 bg-background-light dark:bg-background-dark/50 rounded-2xl border border-border/20 dark:border-border/10 shadow-sm overflow-hidden\">
       {/* Header */}
       <div className="px-6 pt-6 pb-4">
         <div className="flex items-start justify-between">
@@ -252,9 +252,7 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                <Trophy
-                  className="text-emerald-500 text-sm"
-                />
+                <Trophy className="text-emerald-500 text-sm" />
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">
@@ -269,9 +267,7 @@ export function WeeklyChart() {
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                <CircleCheck
-                  className="text-amber-500 text-sm"
-                />
+                <CircleCheck className="text-amber-500 text-sm" />
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">
@@ -301,7 +297,7 @@ export function WeeklyChart() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-primary/20 border border-primary/30" />
+            <span className="w-3 h-3 rounded-full bg-primary/20 border border-border/30" />
             <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
               Daily Goal
             </span>

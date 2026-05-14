@@ -24,7 +24,10 @@ export function CompletedStats({ stats }: CompletedStatsProps) {
       label: "Avg. Completion Time",
       value: `${stats.avgCompletionTime}m`,
       change: `${stats.avgCompletionTimeChange}%`,
-      changeColor: stats.avgCompletionTimeChange < 0 ? "text-emerald-500" : "text-rose-500",
+      changeColor:
+        stats.avgCompletionTimeChange < 0
+          ? "text-emerald-500"
+          : "text-rose-500",
     },
     {
       label: "Total Focus Hours",
@@ -39,12 +42,16 @@ export function CompletedStats({ stats }: CompletedStatsProps) {
       {statCards.map((stat) => (
         <div
           key={stat.label}
-          className="bg-primary/5 p-5 rounded-xl border border-primary flex flex-col gap-1"
+          className="bg-primary/5 p-5 rounded-xl border border-border flex flex-col gap-1"
         >
-          <span className="text-slate-500 text-sm font-medium">{stat.label}</span>
+          <span className="text-slate-500 text-sm font-medium">
+            {stat.label}
+          </span>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-bold">{stat.value}</span>
-            <span className={`text-xs font-bold ${stat.changeColor}`}>{stat.change}</span>
+            <span className={`text-xs font-bold ${stat.changeColor}`}>
+              {stat.change}
+            </span>
           </div>
         </div>
       ))}

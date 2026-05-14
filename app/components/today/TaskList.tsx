@@ -35,9 +35,9 @@ export function TaskList({
               <div
                 key={task.id}
                 onClick={() => onTaskClick?.(task)}
-                className="bg-background-light dark:bg-background-dark/40 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4 cursor-pointer hover:border-primary/50 transition-colors"
+                className="bg-background-light dark:bg-background-dark/40 rounded-xl border border-border/20 dark:border-border/10 p-4 flex items-center gap-4 cursor-pointer hover:border-border/50 transition-colors"
               >
-                <div className="size-5 rounded border-2 border-primary flex items-center justify-center">
+                <div className="size-5 rounded border-2 border-border flex items-center justify-center">
                   <div className="size-2.5 bg-primary rounded-sm" />
                 </div>
                 <div className="flex-1">
@@ -70,7 +70,7 @@ export function TaskList({
               <div
                 key={task.id}
                 onClick={() => onTaskClick?.(task)}
-                className="bg-background-light dark:bg-background-dark/20 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4 hover:border-primary/30 dark:hover:border-primary/20 cursor-pointer transition-colors"
+                className="bg-background-light dark:bg-background-dark/20 rounded-xl border border-border/20 dark:border-border/10 p-4 flex items-center gap-4 hover:border-border/30 dark:hover:border-border/20 cursor-pointer transition-colors"
               >
                 <div className="size-5 rounded border-2 border-foreground/30 dark:border-foreground/30 shrink-0" />
                 <div className="flex-1">
@@ -83,9 +83,7 @@ export function TaskList({
                         : ""}
                   </p>
                 </div>
-                <ArrowRight
-                  className="text-foreground/50 text-lg"
-                />
+                <ArrowRight className="text-foreground/50 text-lg" />
               </div>
             ))}
           </div>
@@ -102,7 +100,7 @@ export function TaskList({
             {completedTasks.map((task) => (
               <div
                 key={task.id}
-                className="bg-primary/5 dark:bg-primary/5 rounded-xl border border-primary/20 dark:border-primary/10 p-4 flex items-center gap-4"
+                className="bg-primary/5 dark:bg-primary/5 rounded-xl border border-border/20 dark:border-border/10 p-4 flex items-center gap-4"
               >
                 <div className="">
                   <CircleCheck className="text-xs" />

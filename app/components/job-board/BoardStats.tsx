@@ -25,22 +25,18 @@ interface StatItem {
 export function BoardStats({ tasks }: BoardStatsProps) {
   const totalTasks = tasks.length;
 
-  const completedTasks = tasks.filter(
-    (t) => t.status === "completed"
-  ).length;
+  const completedTasks = tasks.filter((t) => t.status === "completed").length;
 
   const inProgressTasks = tasks.filter(
-    (t) => t.status === "in_progress"
+    (t) => t.status === "in_progress",
   ).length;
 
   const urgentTasks = tasks.filter(
-    (t) => t.priority === "urgent" && t.status !== "completed"
+    (t) => t.priority === "urgent" && t.status !== "completed",
   ).length;
 
   const completionRate =
-    totalTasks > 0
-      ? Math.round((completedTasks / totalTasks) * 100)
-      : 0;
+    totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
   const stats: StatItem[] = [
     {
@@ -85,7 +81,7 @@ export function BoardStats({ tasks }: BoardStatsProps) {
         return (
           <div
             key={stat.label}
-            className="bg-background-light dark:bg-background-dark/30 rounded-xl border border-primary/20 p-4"
+            className="bg-background-light dark:bg-background-dark/30 rounded-xl border border-border/20 p-4"
           >
             <div className="flex items-center gap-3">
               <div
@@ -108,7 +104,7 @@ export function BoardStats({ tasks }: BoardStatsProps) {
       })}
 
       {/* Progress */}
-      <div className="col-span-2 md:col-span-4 bg-background-light dark:bg-background-dark/30 rounded-xl border border-primary/20 p-4">
+      <div className="col-span-2 md:col-span-4 bg-background-light dark:bg-background-dark/30 rounded-xl border border-border/20 p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-semibold text-foreground">
             Overall Progress

@@ -42,11 +42,18 @@ interface ToggleItemProps {
   onChange: () => void;
 }
 
-function ToggleItem({ title, description, checked, onChange }: ToggleItemProps) {
+function ToggleItem({
+  title,
+  description,
+  checked,
+  onChange,
+}: ToggleItemProps) {
   return (
     <div className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
       <div>
-        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{title}</p>
+        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+          {title}
+        </p>
         {description && <p className="text-xs text-slate-500">{description}</p>}
       </div>
       <ToggleSwitch checked={checked} onChange={onChange} />
@@ -61,16 +68,21 @@ interface SectionCardProps {
 
 function SectionCard({ title, children }: SectionCardProps) {
   return (
-    <section className="bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+    <section className="bg-background-dark rounded-xl border border-border overflow-hidden shadow-sm">
       <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-        <h3 className="font-bold text-slate-900 dark:text-slate-100">{title}</h3>
+        <h3 className="font-bold text-slate-900 dark:text-slate-100">
+          {title}
+        </h3>
       </div>
       <div className="p-6 space-y-4">{children}</div>
     </section>
   );
 }
 
-export function AssistantBehaviorSection({ data, onChange }: AssistantBehaviorSectionProps) {
+export function AssistantBehaviorSection({
+  data,
+  onChange,
+}: AssistantBehaviorSectionProps) {
   const updateTaskExtraction = (key: keyof TaskExtractionSettings) => {
     onChange({
       ...data,

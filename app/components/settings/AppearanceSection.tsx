@@ -15,9 +15,9 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
   return (
     <section
       id="appearance"
-      className="bg-background-dark rounded-xl border border-primary overflow-hidden shadow-sm"
+      className="bg-background-dark rounded-xl border border-border overflow-hidden shadow-sm"
     >
-      <div className="px-6 py-4 border-b border-primary">
+      <div className="px-6 py-4 border-b border-border">
         <h3 className="font-bold text-slate-900 dark:text-slate-100">
           Appearance
         </h3>
@@ -32,7 +32,7 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
               onClick={() => onChange({ ...data, theme: "dark" })}
               className={`flex flex-col gap-3 p-4 rounded-xl border-2 transition-all ${
                 data.theme === "dark"
-                  ? "border-primary bg-primary/5 text-primary"
+                  ? "border-border bg-primary/5 text-primary"
                   : "border-slate-200 dark:border-slate-700 bg-white dark:bg-transparent text-slate-500 dark:text-slate-400"
               }`}
             >
@@ -51,7 +51,7 @@ export function AppearanceSection({ data, onChange }: AppearanceSectionProps) {
               onClick={() => onChange({ ...data, theme: "light" })}
               className={`flex flex-col gap-3 p-4 rounded-xl border-2 transition-all ${
                 data.theme === "light"
-                  ? "border-primary bg-primary/5 text-primary"
+                  ? "border-border bg-primary/5 text-primary"
                   : "border-slate-200 dark:border-slate-700 bg-white dark:bg-transparent text-slate-500 dark:text-slate-400"
               }`}
             >

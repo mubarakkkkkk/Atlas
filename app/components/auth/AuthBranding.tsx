@@ -11,12 +11,12 @@ export function AuthBranding() {
       {/* Logo */}
       <div className="relative z-10">
         <div className="flex items-center gap-3 text-white">
-         <Image 
-          src='/images/noBg.png'
-          alt="Atlas Logo"
-          width={200}
-          height={80}
-        />
+          <Image
+            src="/images/noBg.png"
+            alt="Atlas Logo"
+            width={200}
+            height={80}
+          />
         </div>
       </div>
 
@@ -26,8 +26,8 @@ export function AuthBranding() {
           Plan your day in seconds.
         </h1>
         <p className="text-xl text-slate-400 font-medium">
-          Let your assistant handle the rest. Automate your workflow, manage tasks, and stay
-          focused on what matters.
+          Let your assistant handle the rest. Automate your workflow, manage
+          tasks, and stay focused on what matters.
         </p>
 
         {/* Visual Preview: Chat to Task */}
@@ -38,7 +38,8 @@ export function AuthBranding() {
             </div>
             <div className="bg-slate-700/50 p-3 rounded-lg rounded-tl-none">
               <p className="text-sm text-slate-200">
-                &quot;Schedule a code review for tomorrow at 10am and notify the team.&quot;
+                &quot;Schedule a code review for tomorrow at 10am and notify the
+                team.&quot;
               </p>
             </div>
           </div>
@@ -49,14 +50,18 @@ export function AuthBranding() {
             <div className="h-px flex-1 bg-liner-to-r from-transparent via-primary/50 to-transparent" />
           </div>
 
-          <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 p-4 rounded-lg">
+          <div className="flex items-center gap-3 bg-primary/10 border border-border/20 p-4 rounded-lg">
             <Calendar className="text-primary" />
             <div>
               <p className="text-xs font-bold text-primary uppercase tracking-wider">
                 New Task Created
               </p>
-              <p className="text-sm font-semibold text-white">Code Review Session</p>
-              <p className="text-xs text-slate-400">Tomorrow, 10:00 AM • Notifications Sent</p>
+              <p className="text-sm font-semibold text-white">
+                Code Review Session
+              </p>
+              <p className="text-xs text-slate-400">
+                Tomorrow, 10:00 AM • Notifications Sent
+              </p>
             </div>
           </div>
         </div>

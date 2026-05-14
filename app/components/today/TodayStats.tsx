@@ -1,5 +1,10 @@
 "use client";
-import { CircleCheck, CircleEllipsis, ArrowBigRight, Timer } from "lucide-react";
+import {
+  CircleCheck,
+  CircleEllipsis,
+  ArrowBigRight,
+  Timer,
+} from "lucide-react";
 import { TodayStats as Stats } from "./types";
 
 interface TodayStatsProps {
@@ -14,7 +19,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Tasks Completed */}
-      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-primary/20 dark:border-primary/10">
+      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-border/20 dark:border-border/10">
         <div className="flex justify-between items-start mb-2">
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Tasks Completed
@@ -31,7 +36,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
       </div>
 
       {/* Tasks Remaining */}
-      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-primary/20 dark:border-primary/10">
+      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-border/20 dark:border-border/10">
         <div className="flex justify-between items-start mb-2">
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Tasks Remaining
@@ -45,7 +50,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
       </div>
 
       {/* Next Task */}
-      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-primary/20 dark:border-primary/10 border-l-4 border-l-primary">
+      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-border/20 dark:border-border/10 border-l-4 border-l-primary">
         <div className="flex justify-between items-start mb-2">
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Next Task
@@ -59,7 +64,7 @@ export function TodayStats({ stats }: TodayStatsProps) {
       </div>
 
       {/* Focus Time */}
-      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-primary/20 dark:border-primary/10">
+      <div className="bg-background-light dark:bg-background-dark/40 p-5 rounded-xl border border-border/20 dark:border-border/10">
         <div className="flex justify-between items-start mb-2">
           <span className="text-sm font-medium text-foreground/60 dark:text-foreground/70">
             Focus Time

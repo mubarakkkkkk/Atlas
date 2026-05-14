@@ -7,7 +7,10 @@ interface TaskHistoryCardProps {
   task: CompletedTask;
 }
 
-function formatDurationDiff(actual: number, estimated: number): { text: string; color: string } {
+function formatDurationDiff(
+  actual: number,
+  estimated: number,
+): { text: string; color: string } {
   const diff = actual - estimated;
   if (diff === 0) {
     return { text: "(on time)", color: "text-slate-500" };
@@ -23,7 +26,7 @@ function formatTimeAgo(dateString: string): string {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-  
+
   if (diffHours < 1) {
     const diffMins = Math.floor(diffMs / (1000 * 60));
     return `Finished ${diffMins}m ago`;
@@ -45,10 +48,13 @@ function formatDuration(minutes: number): string {
 }
 
 export function TaskHistoryCard({ task }: TaskHistoryCardProps) {
-  const durationDiff = formatDurationDiff(task.duration, task.estimatedDuration);
+  const durationDiff = formatDurationDiff(
+    task.duration,
+    task.estimatedDuration,
+  );
 
   return (
-    <div className="bg-primary/5 p-4 rounded-xl border border-primary hover:border-primary/50 transition-all flex items-center justify-between">
+    <div className="bg-primary/5 p-4 rounded-xl border border-border hover:border-border/50 transition-all flex items-center justify-between">
       <div className="flex items-center gap-4">
         <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
           <Check />
@@ -63,10 +69,14 @@ export function TaskHistoryCard({ task }: TaskHistoryCardProps) {
       </div>
       <div className="flex items-center gap-6">
         <div className="text-right">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Duration</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">
+            Duration
+          </p>
           <p className="text-sm font-medium">
             {formatDuration(task.duration)}{" "}
-            <span className={`text-[10px] ml-1 ${durationDiff.color}`}>{durationDiff.text}</span>
+            <span className={`text-[10px] ml-1 ${durationDiff.color}`}>
+              {durationDiff.text}
+            </span>
           </p>
         </div>
         <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">

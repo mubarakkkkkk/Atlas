@@ -26,9 +26,14 @@ export function OtpInput({ value, onChange }: OtpInputProps) {
 
   const handlePaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
-    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+    const pasted = e.clipboardData
+      .getData("text")
+      .replace(/\D/g, "")
+      .slice(0, 6);
     const newOtp = [...value];
-    pasted.split("").forEach((char, i) => { newOtp[i] = char; });
+    pasted.split("").forEach((char, i) => {
+      newOtp[i] = char;
+    });
     onChange(newOtp);
     refs.current[Math.min(pasted.length, 5)]?.focus();
   };
@@ -38,7 +43,9 @@ export function OtpInput({ value, onChange }: OtpInputProps) {
       {value.map((digit, index) => (
         <input
           key={index}
-          ref={(el) => { refs.current[index] = el; }}
+          ref={(el) => {
+            refs.current[index] = el;
+          }}
           type="text"
           inputMode="numeric"
           maxLength={1}
@@ -47,8 +54,10 @@ export function OtpInput({ value, onChange }: OtpInputProps) {
           onChange={(e) => handleChange(index, e)}
           onKeyDown={(e) => handleKeyDown(index, e)}
           onPaste={handlePaste}
-          className="w-12 h-14 md:w-14 md:h-16 text-center text-xl font-bold bg-[#1e293b] border border-slate-700 text-white rounded-lg focus:outline-none focus:border-primary transition-all"
-          style={{ boxShadow: digit ? "0 0 20px rgba(13, 89, 242, 0.2)" : undefined }}
+          className="w-12 h-14 md:w-14 md:h-16 text-center text-xl font-bold bg-[#1e293b] border border-slate-700 text-white rounded-lg focus:outline-none focus:border-border transition-all"
+          style={{
+            boxShadow: digit ? "0 0 20px rgba(13, 89, 242, 0.2)" : undefined,
+          }}
         />
       ))}
     </div>

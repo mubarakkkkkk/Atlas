@@ -14,18 +14,18 @@ export function DailyTimeline({ events }: DailyTimelineProps) {
         <Clock4 className="text-lg" />
         Daily Timeline
       </h3>
-      <div className="bg-background-light dark:bg-background-dark/20 rounded-xl p-6 border border-primary/20 dark:border-primary/10\">
+      <div className="bg-background-light dark:bg-background-dark/20 rounded-xl p-6 border border-border/20 dark:border-border/10\">
         <div className="space-y-0">
           {events.map((event, index) => {
             const isLast = index === events.length - 1;
             const priorityConfig = PRIORITY_CONFIG[event.priority];
             const categoryConfig = CATEGORY_CONFIG[event.category];
 
-            let borderColor = "border-primary/30 dark:border-primary/20";
+            let borderColor = "border-border/30 dark:border-border/20";
             if (event.isCompleted) {
-              borderColor = "border-primary-light";
+              borderColor = "border-border-light";
             } else if (event.isCurrent) {
-              borderColor = "border-primary";
+              borderColor = "border-border";
             }
 
             return (
@@ -39,7 +39,7 @@ export function DailyTimeline({ events }: DailyTimelineProps) {
                     className={`absolute left-[11px] ${index === 0 ? "top-6" : "top-0"} bottom-0 w-px ${
                       event.isCompleted || event.isCurrent
                         ? "bg-primary/20 dark:bg-primary/20"
-                        : "border-l border-dashed border-primary/20 dark:border-primary/10"
+                        : "border-l border-dashed border-border/20 dark:border-border/10"
                     }`}
                   />
                 )}

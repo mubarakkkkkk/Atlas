@@ -1,6 +1,14 @@
 "use client";
 
-import { Bot, CirclePlus, CircleX, Clock4, RefreshCcw, Send, User } from "lucide-react";
+import {
+  Bot,
+  CirclePlus,
+  CircleX,
+  Clock4,
+  RefreshCcw,
+  Send,
+  User,
+} from "lucide-react";
 
 interface Message {
   role: "assistant" | "user";
@@ -27,7 +35,13 @@ const messages: Message[] = [
   },
 ];
 
-function AssistantMessage({ content, isLoading }: { content: string; isLoading?: boolean }) {
+function AssistantMessage({
+  content,
+  isLoading,
+}: {
+  content: string;
+  isLoading?: boolean;
+}) {
   return (
     <div className="flex gap-4 max-w-2xl">
       <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center text-primary shrink-0">
@@ -37,13 +51,11 @@ function AssistantMessage({ content, isLoading }: { content: string; isLoading?:
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-1 uppercase tracking-wider">
           Assistant
         </p>
-        <div className="bg-primary/6 p-4 rounded-xl rounded-tl-none border border-primary shadow-sm">
+        <div className="bg-primary/6 p-4 rounded-xl rounded-tl-none border border-border shadow-sm">
           <p className="text-sm leading-relaxed">{content}</p>
           {isLoading && (
             <div className="mt-3 flex items-center gap-2 text-xs text-primary font-medium animate-pulse">
-              <RefreshCcw
-              size={20}
-               className="text-sm" />
+              <RefreshCcw size={20} className="text-sm" />
               <span>Assistant organizing tasks...</span>
             </div>
           )}
@@ -73,7 +85,7 @@ function UserMessage({ content }: { content: string }) {
 
 export function ChatPanel() {
   return (
-    <section className="flex-1 flex flex-col bg-background-dark relative border-r border-primary">
+    <section className="flex-1 flex flex-col bg-background-dark relative border-r border-border">
       <div className="flex-1 overflow-y-auto p-8 space-y-6 custom-scrollbar">
         {messages.map((message, index) =>
           message.role === "assistant" ? (
@@ -84,13 +96,13 @@ export function ChatPanel() {
             />
           ) : (
             <UserMessage key={index} content={message.content} />
-          )
+          ),
         )}
       </div>
 
       {/* Floating Reminder */}
       <div className="absolute bottom-32 left-1/2 -translate-x-1/2 w-full max-w-xs px-4">
-        <div className="glass-panel rounded-xl p-3 flex items-center gap-3 shadow-2xl border-primary/20 ring-1 ring-primary/30">
+        <div className="glass-panel rounded-xl p-3 flex items-center gap-3 shadow-2xl border-border/20 ring-1 ring-primary/30">
           <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
             <Clock4 />
           </div>
@@ -105,10 +117,10 @@ export function ChatPanel() {
       </div>
 
       {/* Input Area */}
-      <div className="p-6 bg-background-light dark:bg-background-dark border-t border-primary">
+      <div className="p-6 bg-background-light dark:bg-background-dark border-t border-border">
         <div className="max-w-3xl mx-auto relative group">
           <div className="absolute -inset-1 bg-linear-to-r from-primary/50 to-primary/0 rounded-xl blur opacity-25 group-focus-within:opacity-50 transition duration-1000" />
-          <div className="relative bg-background-dark rounded-xl border border-primary shadow-sm flex items-center gap-2 p-2 pr-3">
+          <div className="relative bg-background-dark rounded-xl border border-border shadow-sm flex items-center gap-2 p-2 pr-3">
             <button className="flex items-center justify-center w-9 h-9 text-slate-400 hover:text-primary transition-colors shrink-0">
               <CirclePlus className="text-xl" />
             </button>

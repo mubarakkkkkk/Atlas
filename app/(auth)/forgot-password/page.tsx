@@ -1,5 +1,5 @@
 import { ForgotPasswordBranding } from "@/app/components/auth/forgotPasswordBranding";
-import { ArrowLeft, ArrowRight,Mail } from "lucide-react";
+import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
 import Button from "@/app/components/layout/button";
 import Input from "@/app/components/layout/input";
@@ -12,7 +12,6 @@ const ForgotPasswordPage = () => {
       {/* Right panel */}
       <div className="grow md:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-background">
         <div className="w-full max-w-md space-y-10">
-
           {/* Card */}
           <div
             className="rounded-xl p-8 space-y-6"
@@ -28,7 +27,9 @@ const ForgotPasswordPage = () => {
                 Reset your password
               </h2>
               <p className="text-sm text-on-surface-variant">
-                {"Enter your email address and we'll send you a code to reset your password."}
+                {
+                  "Enter your email address and we'll send you a code to reset your password."
+                }
               </p>
             </div>
 
@@ -52,7 +53,7 @@ const ForgotPasswordPage = () => {
                     autoComplete="email"
                     required
                     placeholder="name@company.com"
-                    className="pl-12 bg-surface-variant border-outline-variant text-on-surface rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container placeholder:text-outline/50"
+                    className="pl-12 bg-surface-variant border-outline-variant text-on-surface rounded-lg focus:ring-2 focus:ring-primary-container focus:border-border-container placeholder:text-outline/50"
                   />
                 </div>
               </div>
@@ -77,9 +78,7 @@ const ForgotPasswordPage = () => {
                 Back to Sign In
               </Link>
             </div>
-          </div>  
-         
-
+          </div>
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ export function AtlasInsights({
   onDismiss,
 }: AtlasInsightsProps) {
   return (
-    <section className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/20">
+    <section className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-border/20">
       <div className="flex items-center gap-3 mb-6">
         <div className="size-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30">
           <Bot />
@@ -38,9 +38,7 @@ export function AtlasInsights({
           const iconConfig = INSIGHT_ICONS[insight.type];
           return (
             <div key={insight.id} className="flex gap-4">
-              <Lightbulb
-                className={`${iconConfig.color} shrink-0`}
-              />
+              <Lightbulb className={`${iconConfig.color} shrink-0`} />
               <div>
                 <p className="text-sm font-medium leading-relaxed">
                   {insight.highlight ? (
@@ -71,7 +69,7 @@ export function AtlasInsights({
         </button>
         <button
           onClick={onDismiss}
-          className="w-full py-2.5 bg-background-light dark:bg-background-dark text-foreground dark:text-foreground border border-primary/20 dark:border-primary/10 rounded-xl text-sm font-bold hover:bg-primary/5 dark:hover:bg-primary/5 transition-all\"
+          className="w-full py-2.5 bg-background-light dark:bg-background-dark text-foreground dark:text-foreground border border-border/20 dark:border-border/10 rounded-xl text-sm font-bold hover:bg-primary/5 dark:hover:bg-primary/5 transition-all\"
         >
           Ignore Suggestions
         </button>

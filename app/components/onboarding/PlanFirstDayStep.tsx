@@ -91,7 +91,7 @@ export function PlanFirstDayStep({
                 onChange({ ...data, dailyFocus: e.target.value })
               }
               placeholder="e.g. Today I want to fix a bug, review PRs, and deploy later"
-              className="w-full min-h-[140px] resize-none rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 p-4 text-base text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+              className="w-full min-h-[140px] resize-none rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 p-4 text-base text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:border-border focus:ring-1 focus:ring-primary outline-none transition-all"
             />
 
             <WandSparkles className="absolute bottom-3 right-3 w-5 h-5 text-slate-400 dark:text-slate-600 pointer-events-none" />
@@ -116,7 +116,7 @@ export function PlanFirstDayStep({
                   key={task.id}
                   className={`flex items-center gap-4 p-3 rounded-lg border transition ${
                     task.isHighlighted
-                      ? "border-dashed border-primary/30 bg-primary/5"
+                      ? "border-dashed border-border/30 bg-primary/5"
                       : "border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-transparent"
                   }`}
                 >

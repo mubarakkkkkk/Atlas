@@ -34,7 +34,7 @@ export function BoardFilters({
       {/* Search */}
       <div className="relative flex-1 max-w-sm">
         <Search
-        size={20}
+          size={20}
           className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
         />
         <input
@@ -42,7 +42,7 @@ export function BoardFilters({
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search tasks..."
-          className="w-full bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+          className="w-full bg-background-light dark:bg-background-dark border border-border/20 dark:border-border/20 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
         />
       </div>
 
@@ -53,7 +53,7 @@ export function BoardFilters({
           onChange={(e) =>
             onPriorityChange(e.target.value as TaskPriority | "all")
           }
-          className="bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+          className="bg-background-light dark:bg-background-dark border border-border/20 dark:border-border/20 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
         >
           <option value="all">All Priorities</option>
           {Object.entries(PRIORITY_CONFIG).map(([key, config]) => (
@@ -67,7 +67,7 @@ export function BoardFilters({
         <select
           value={selectedLabel}
           onChange={(e) => onLabelChange(e.target.value as TaskLabel | "all")}
-          className="bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/20 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
+          className="bg-background-light dark:bg-background-dark border border-border/20 dark:border-border/20 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none"
         >
           <option value="all">All Labels</option>
           {Object.entries(LABEL_CONFIG).map(([key, config]) => (
