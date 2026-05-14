@@ -61,7 +61,7 @@ interface SectionCardProps {
 
 function SectionCard({ title, children }: SectionCardProps) {
   return (
-    <section className="bg-white dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+    <section className="bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
       <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
         <h3 className="font-bold text-slate-900 dark:text-slate-100">{title}</h3>
       </div>
